@@ -2666,20 +2666,29 @@ a {
       width: 1em;
       height: 1em;
       margin-top: 0.2em;
-      background: white; } }
+      background: white; }
+
+  .listen_category .listen_top .page_title_container .page_title {
+    border-right: none; }
+  .listen_category .category .category_container .article .article_container .article_artist {
+    font-size: 38px; }
+  .listen_category .category .category_container .article .article_container .article_title {
+    font-size: 28px;
+    max-width: 305px;
+    overflow: hidden; } }
 @media screen and (max-width: 580px) {
-  .category .category_container .article.article_two, .category .category_container .article.article_four, .category .category_container .article.article_four_text {
+  .category .category_container .article.article_two, .category .category_container .article.article_three, .category .category_container .article.article_four, .category .category_container .article.article_four_text {
     width: 100%; }
-    .category .category_container .article.article_two img, .category .category_container .article.article_four img, .category .category_container .article.article_four_text img {
+    .category .category_container .article.article_two img, .category .category_container .article.article_three img, .category .category_container .article.article_four img, .category .category_container .article.article_four_text img {
       width: 100%; }
-    .category .category_container .article.article_two .content_block, .category .category_container .article.article_four .content_block, .category .category_container .article.article_four_text .content_block {
+    .category .category_container .article.article_two .content_block, .category .category_container .article.article_three .content_block, .category .category_container .article.article_four .content_block, .category .category_container .article.article_four_text .content_block {
       width: 100%;
       padding: 0;
       margin-top: 0;
       height: auto; }
-      .category .category_container .article.article_two .content_block:after, .category .category_container .article.article_four .content_block:after, .category .category_container .article.article_four_text .content_block:after {
+      .category .category_container .article.article_two .content_block:after, .category .category_container .article.article_three .content_block:after, .category .category_container .article.article_four .content_block:after, .category .category_container .article.article_four_text .content_block:after {
         width: 100%; }
-      .category .category_container .article.article_two .content_block .article_title, .category .category_container .article.article_four .content_block .article_title, .category .category_container .article.article_four_text .content_block .article_title {
+      .category .category_container .article.article_two .content_block .article_title, .category .category_container .article.article_three .content_block .article_title, .category .category_container .article.article_four .content_block .article_title, .category .category_container .article.article_four_text .content_block .article_title {
         margin-top: initial; }
   .category .category_container .article.article_full_right img {
     margin-left: 0; }
@@ -2696,6 +2705,22 @@ a {
   .read_category .read_top .page_title_container .page_title {
     width: 100%; }
   .read_category .read_top .switch {
-    display: none; } }
+    display: none; }
+
+  .listen_category .listen_top .page_title_container .page_title {
+    font-size: 13px; }
+  .listen_category .category .category_container .article .article_container {
+    line-height: 34px; }
+    .listen_category .category .category_container .article .article_container .article_artist {
+      font-size: 22px;
+      margin-left: 0;
+      padding-top: 3px; }
+    .listen_category .category .category_container .article .article_container .article_title {
+      font-size: 18px;
+      display: block;
+      padding-left: 20px; }
+    .listen_category .category .category_container .article .article_container .icon-play {
+      top: 15px;
+      left: -15px; } }
 
 /*# sourceMappingURL=styles.css.map */
