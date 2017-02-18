@@ -1,0 +1,269 @@
+//VARIABLE
+
+
+$black: #1c1c1c;
+$white: #fefefe;
+$light-grey: #eeeeee;
+$dark-grey: #555555;
+
+$large: 1280px;
+$medium: 1100px;
+$tablet: 780px;
+$mobile: 580px ;
+
+
+
+
+//GLOBAL STYLES
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+html{
+	overflow-x: hidden;
+	display: block;
+}
+body{
+    font-family: 'gotham_htfmedium';	
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+a{
+	text-decoration:none;
+
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+.container{
+	width: 100%;
+	max-width: 1280px; 
+	margin: 0 auto;
+    font-family: 'gotham_htfmedium';
+	position: relative;
+	border-right: 1px solid $light-grey;
+	border-left: 1px solid $light-grey;
+	&.layered_container{
+		height: 50px;
+		width: 100%;
+		background: repeating-linear-gradient(
+		  -45deg,
+		  $black,
+		  $black 1px,
+		  $white 1px,
+		  $white 7px
+		);
+	}
+	@media screen and (max-width: $large){
+		max-width: 1180px; 
+	}
+	@media screen and (max-width: $medium){
+		max-width: 980px; 
+	}
+	@media screen and (max-width: $tablet){
+		max-width: 100%; 
+		border: none;
+	}
+	@media screen and (max-width: $mobile){
+		max-width: 100%;  
+		border: none;
+
+		.section_title{
+			line-height: 48px;
+			text-align: center;
+			font-weight: bold;
+		}
+	}
+}
+
+.half{
+	display: inline-block;
+	width: 50%;
+	float: left;
+}
+
+@media screen and (max-width: $mobile){
+	.hidden-xs{
+		display:none!important;
+	}
+}
+.grey_line{
+	position:relative;
+	&:after{
+		content:'';
+		position: absolute;
+		bottom:0;
+		left:-300px;
+		height: 1px;
+		  width: 9600px;
+		background-color: $light-grey;
+	}
+	&.mobile{
+		@media screen and (max-width: $mobile){
+			&:after{
+				display:none;
+			}
+		}
+	}
+}
+
+
+.switch{
+	width: 20%;
+	text-align: center;
+	display: inline-block;
+	border-left: 1px solid $light-grey;		
+	float: left;
+	line-height: 76px;
+	.btn_prev,
+	.btn_next{
+		background-color: $white;
+		color: $black;
+		border-radius:  100px;
+		height: 36px;
+		width: 36px;
+		text-align: center;
+		line-height: 36px;
+		font-size: 12px;
+		border: 1px solid $black;
+		display: inline-block;
+		flaot:left;
+		margin: 0 5px;
+		i{
+			color: $black;
+		}
+		&:hover{
+			cursor: pointer;
+			background-color: $black;
+			i{
+				color: $white;
+			}
+
+		}
+	}
+}
+
+.title{
+	text-transform: uppercase;
+	letter-spacing:1px;
+}
+
+.section_title{
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 0 30px;
+	line-height: 76px;
+	margin: 0;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+.article{
+	font-size: 18px;
+	margin-top: 3px;
+	padding-bottom: 6px;
+	font-weight: 300;
+	letter-spacing: 1px;
+    font-family: 'gotham_htfmedium';
+	padding:0 30px;
+	margin-bottom: 30px;
+
+	.article_container{
+		border-bottom: 3px solid $black;
+		position: relative;
+		.article_title{
+		    margin-top: 5px;
+		    margin-bottom: -2px;
+		    color: $black;
+    		font-family: 'gotham_htfmedium';
+			font-weight: 100;
+		}
+		.display_date{
+			font-size: 14px;
+			color: $dark-grey;
+    		font-family: 'libre_baskervilleregular', serif;
+			margin-bottom: 17px;
+		}
+	}
+	@media screen and (max-width: $mobile){
+		padding:0 20px;
+	}
+}
+
+.category_article{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	padding: 5px;
+	background-color: $black;
+	color: $white;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    font-weight: 100;
+    font-family: 'gotham_htfmedium';
+}
+
+.btn{
+	display: block;
+	border: 1px solid $black;
+	line-height: 40px;
+	font-size: 16px;
+	padding: 0 10px;
+	text-align: center;
+	width: 100%;
+	max-width: 180px;
+	margin: 40px auto;
+	background: transparent;
+	transition: all 0.4s ease-in;
+	&:hover{
+		border: 4px solid $black;
+		transition: all 0.4s ease-in;
+	}
+	a{
+		text-decoration: none;
+		color: $black;
+	}
+}
+
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+

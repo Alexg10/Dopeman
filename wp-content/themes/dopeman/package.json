@@ -1,0 +1,18 @@
+{
+  "name": "fake_theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fake website",
+  "author": "Alex Guerard",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "dependencies": {
+    "grunt-contrib-watch": "^1.0.0",
+    "normalize.scss": "^0.1.0"
+  }
+}

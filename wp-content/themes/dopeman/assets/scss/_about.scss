@@ -1,0 +1,36 @@
+//About
+
+
+.about_top{
+	.page_title{
+		margin: 0;
+		padding: 0 30px;
+		font-size: 18px;
+		line-height: 76px;
+		font-family: 'Oswald', sans-serif; 
+		text-transform: uppercase;
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
+}
+.about_block{
+	min-height: 720px;
+	position: relative;
+	background-size: cover;
+	background-position: 50%;
+	.about_description{
+		position: absolute;
+		bottom: 22px;
+		left: 155px;
+		font-size: 30px;
+    	font-family: 'libre_baskervilleregular';
+		max-width: 580px;
+		color: $white;
+		@media screen and (max-width: $tablet){
+			left: 20px;
+			font-size: 25px;
+
+		}
+
+	}
+} 

@@ -1,0 +1,129 @@
+//LANDING
+
+.popin{
+	position:fixed;
+	top:-110%;
+	left:0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba($black, 0.9);
+	z-index: 100;
+	transition: all 0.4s ease-in;
+	&.visible{
+		top: 0;
+		transition: all 0.4s ease-in;
+  
+	}
+}
+
+
+.rsx_scx_block{
+	position: absolute;
+	top: 50%;
+	left:50%;
+	width: 250px;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+	.scx_link{
+		display: flex;
+		justify-content: space-around;
+		a{
+			color: $black;
+			font-size: 20px;
+			text-decoration: none;
+		}
+	}
+	.rsx_scx_title{
+		font-size: 22px;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+	}
+}
+
+
+
+.page-template-landing{
+    overflow: hidden;
+    height: 100vh;
+    box-sizing: border-box;
+    background: white;
+	border: 10px solid white;
+    .grey_line{
+    	a:after{
+    		display: none;
+    	}
+    }
+    .site-content{
+    	position: absolute;
+    	width: 100%;
+    }
+	.landing_content{
+		position: absolute;
+
+		width: 100%;
+		color: $white;
+		text-align: center;
+	    .video_bg{
+			box-sizing: border-box;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: -100;
+			transform: translateX(-50%) translateY(-50%); 
+			background-size: cover;
+	    }
+	    h1{
+	    	font-size: 120px;
+			letter-spacing: 70px;
+			text-transform: uppercase;
+			font-family: 'Oswald', sans-serif; 
+			font-weight: 100;
+			margin-top: 0;
+			@media screen and (max-width: $mobile){
+				font-size: 60px;
+				letter-spacing: 10px;
+			}
+	    }
+	    .dopeman_description{
+			top: 50%;
+			transform: translateY(50%);
+
+			.description{
+		    	max-width: 480px;
+    			font-family: 'libre_baskervilleregular';
+		    	font-size: 17px;
+		    	margin: 0 auto;
+				color: rgba($white, 0.7);
+				line-height: 28px;
+			}
+	    }
+	    .share_part{
+	    	font-size: 17px;
+	    	font-weight: bold;
+	    	.btn_display{
+	    		margin-top: 17px;
+	    		a{
+	    			background-color: $white;
+	    			color: #1c1c1c;
+	    			line-height: 40px;
+	    			width: 145px;
+	    			border-radius: 18px;
+	    			display: inline-block;
+	    			font-weight: normal;
+	    			margin: 0 10px;
+					@media screen and (max-width: $mobile){
+						margin-bottom: 20px;
+					}
+	    		}
+	    	}
+	    }
+	}
+	
+	.site-header{
+		display: none;
+	}
+}
