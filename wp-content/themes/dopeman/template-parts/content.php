@@ -49,11 +49,12 @@
 				<div class="single_title"><?php the_title(); ?></div>
 			</div>
 			<div class="single_player">
-				<div class="player_background">
 				<?php 
 					$playlist_background = get_field('article_cover'); 
-					?>
-					<img src="<?php echo $playlist_background['sizes']['player_background'];?>">
+				?>
+				<div class="player_background" style="background-image: url('<?php echo $playlist_background['sizes']['player_background'];?>')">
+	
+					<img src="">
 				</div>
 			</div>
 		</div>
@@ -66,13 +67,20 @@
 	    while ( have_rows('content_bloc') ) : the_row(); ?>
 	        <div class="bloc_title"><?php the_sub_field('bloc_title'); ?></div>
 	        <?php if( have_rows('sub_content_block') ): ?>
-		        	<?php	        								while( have_rows('sub_content_block') ): the_row(); ?>
+		        	<?php while( have_rows('sub_content_block') ): the_row(); ?>
 		        		<div class="content">
 			        		<div class="sub_content_description">        			
 								<?php the_sub_field('sub_content_description'); ?>
 			        		</div>
 			        		<div class="medias">
-								<?php the_sub_field('medias'); ?>
+								<?php $medias = get_sub_field('medias');
+								 $img = get_sub_field('content_img')['sizes']['data-img'];
+								 if($medias != ''):
+								 	echo $medias;
+								 elseif ($img !=''): ?>
+								<img src="<?php echo $img ?>">
+							<?php endif; ?>
+
 			        			
 			        		</div>
 	        			</div>

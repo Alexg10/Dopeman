@@ -622,6 +622,11 @@
 
 }
 @media screen and (max-width: $mobile){
+	.sub_nav{
+		.hot_shits{
+			max-width: 100%;
+		}
+	}
 	.site-header{
 		.main-navigation{
 			.main-navigation_left{

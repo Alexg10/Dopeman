@@ -41,6 +41,7 @@
 				height: 100%;
 				width: 100%;
 				z-index: -1;
+				background-size: cover;
 				img{
 					height: 100%;
 				}			
@@ -222,5 +223,32 @@
 	
 }
 @media screen and (max-width: $mobile){
+	.single-post{
+		.single_top{
+			.single_info_container{
+				width: 100%;
+				min-height: 10px;
+				.single_title{
+					font-size: 48px;
+					line-height: 67px;
+				}
+			}
+			.single_player{
+				width: 100%; 
+				float:none;
+			}
+		}
+		.single_main_content{
+			.content{
+				display: initial;
+				.sub_content_description{
+					padding-bottom: 0;
+				}
+				.medias{
+					padding-bottom: 30px;
+				}				
+			}
+		}
+	}
 
 }
