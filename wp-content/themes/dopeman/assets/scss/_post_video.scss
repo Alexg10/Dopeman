@@ -343,4 +343,41 @@
 }
 @media screen and (max-width: $mobile){
 
+	.article_top{
+		.share_article{
+			border-left: none;
+			border-bottom: 1px solid $light-grey; 
+		}
+	}
+	.video_post{
+		.video_top{
+			display: initial;
+			.video_info_container{
+				width: 100%;
+				float: none;
+				border-bottom: 1px solid $light-grey; 
+				.video_title{
+				    font-size: 32px;
+				    line-height: 60px;
+				    padding: 0 20px;
+				}
+			}
+			.video_content{
+				width: 100%;
+				padding: 20px;
+			}
+		}
+	}
+	.related_post{
+		.related_title{
+			font-size: 13px;
+			padding-left: 20px;
+			.switch{
+				display: none;
+			}
+		}
+		.article{
+			width: 50%;
+		}
+	}
 }

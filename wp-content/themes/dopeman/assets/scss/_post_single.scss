@@ -239,12 +239,17 @@
 			}
 		}
 		.single_main_content{
+			.bloc_title{
+				padding: 0 20px;
+			}
 			.content{
 				display: initial;
 				.sub_content_description{
+					padding: 0 20px;
 					padding-bottom: 0;
 				}
 				.medias{
+					padding: 0 20px;
 					padding-bottom: 30px;
 				}				
 			}

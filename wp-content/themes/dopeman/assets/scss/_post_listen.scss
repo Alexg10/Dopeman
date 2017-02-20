@@ -183,5 +183,31 @@
 	
 }
 @media screen and (max-width: $mobile){
+	.data_post{
+		.data_top{
+			.page_title_container{
+				.page_title{
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	.article_top{
+		.share_article{
+			border-left: none;
+			border-bottom: 1px solid $light-grey; 
+		}
+	}
+	.listen_post{
+		.listen_top{
+			.listen_info_container{
+				min-width: 60px;
+				.listen_title{
+					font-size: 32px;
+					line-height: 70px;
+				}
+			}
+		}
+	}
 
 }

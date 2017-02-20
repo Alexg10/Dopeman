@@ -98,3 +98,31 @@
 		}
 	}
 }
+@media screen and (max-width: $mobile){
+	.data_post{
+		.data_top{
+			.page_title_container{
+				.page_title{
+					font-size: 20px;
+					padding: 0 20px;
+				}
+			}
+		}
+		.data_main{
+			flex-direction: column-reverse;
+			.data_numbers_container{
+				.data_content{
+					.data_description,
+					.data_number{
+						padding: 20px;
+					}
+				}
+				.data_artist{
+					font-size: 32px;
+					padding: 0 20px;
+					line-height: 80px;					
+				}
+			}
+		}
+	}
+}

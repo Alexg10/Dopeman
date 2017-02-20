@@ -444,12 +444,19 @@
 				display: none;
 			}
 		}
+		.category_article{
+			left: 10px;
+		}
 	}
 	.listen_category{
 		.listen_top{
+			.switch{
+				display: none;
+			}
 			.page_title_container{
 				.page_title{
 					font-size: 13px;
+					width: 100%;
 				}
 			}
 		}
@@ -461,7 +468,7 @@
 						.article_artist{
 							font-size: 22px;
 							margin-left: 0;
-
+							margin-top: 0;
 							padding-top: 3px;
 						}
 						.article_title{
