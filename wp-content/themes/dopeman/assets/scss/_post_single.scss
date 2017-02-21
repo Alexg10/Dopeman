@@ -11,6 +11,7 @@
 	}
 
 	.single_top{
+		overflow: hidden;
 		.single_info_container{
 			width: 50%;
 			display: flex;
@@ -104,6 +105,7 @@
 		}
 		.content{
 			display: flex;
+			width: 100%;
 			.sub_content_description,
 			.medias{
 				flex: 1;
@@ -229,8 +231,9 @@
 				width: 100%;
 				min-height: 10px;
 				.single_title{
-					font-size: 48px;
-					line-height: 67px;
+					font-size: 32px;
+					line-height: 52px;
+					border-top: 1px solid $light-grey;
 				}
 			}
 			.single_player{
@@ -244,6 +247,7 @@
 			}
 			.content{
 				display: initial;
+				width: 100%;  
 				.sub_content_description{
 					padding: 0 20px;
 					padding-bottom: 0;

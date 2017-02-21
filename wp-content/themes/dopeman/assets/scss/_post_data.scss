@@ -92,8 +92,6 @@
 						margin: 0;
 					}
 				}
-
-
 			}
 		}
 	}
@@ -120,7 +118,10 @@
 				.data_artist{
 					font-size: 32px;
 					padding: 0 20px;
-					line-height: 80px;					
+					line-height: 52px;
+					min-height: 80px;
+					display: flex;
+				    align-items: center;					
 				}
 			}
 		}

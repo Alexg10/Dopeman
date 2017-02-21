@@ -539,10 +539,6 @@
 	.switch{
 		float: right;
 	}
-}
-
-@media screen and (max-width: $tablet){
-	max-width: 100%; 
 	.site-header{
 		.main-navigation {
 			.main-navigation_left {
@@ -558,6 +554,11 @@
 			}
 		}
 	}
+}
+
+@media screen and (max-width: $tablet){
+	max-width: 100%; 
+
 	.sub_nav{
 		.hot_shits{
 			max-width: 270px;
