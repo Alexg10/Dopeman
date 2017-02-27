@@ -267,6 +267,9 @@ pos_scroll =0;
 
 
 
+	// CUSTOM SCROLL BAR HOME
+	$(".display_articles").mCustomScrollbar();
+
 
 
 

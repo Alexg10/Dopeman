@@ -55,6 +55,9 @@
 <script src="<?php bloginfo('template_url'); ?>/assets/js/lib/jquery.jticker.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/assets/js/lib/clipboard.js"></script>
 
+<script src="<?php bloginfo('template_url'); ?>/assets/js/lib/jquery.mCustomScrollbar.min.js"></script>
+
+
 
 
 

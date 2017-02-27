@@ -4,6 +4,7 @@
 .listen_post{
 	.container_listen{
 		overflow: hidden;
+
 	}
 
 	.listen_top{
@@ -20,6 +21,7 @@
 				padding: 0 30px;
 			}
 		}
+		
 		.listen_player{
 			position: relative;
 			width: 50%;
@@ -74,7 +76,6 @@
 				min-width: 222px;
 				max-width: 222px;
 				text-transform: uppercase;
-				letter-spacing: 1px;
 			}
 			.listen_description{
 				padding: 30px;
@@ -140,9 +141,11 @@
 		.listen_top{
 			flex-direction: column;
 			position: relative;
+			overflow: hidden;
 			.listen_info_container,
 			.listen_player{
 				width: 100%;
+				min-height: 10px;
 			}
 			.share_article{
 				width: 100%;
@@ -153,6 +156,18 @@
 				top: 0;
 				right: 0;
 				width: 20%;
+			}
+			.listen_info_container{
+				border-top: 1px solid $light-grey;
+			}
+			.listen_player{
+				min-height: 420px;
+				.player_background {
+					img{
+						height: auto ;
+						width: 100%; 
+					}
+				}
 			}
 		}
 		.listen_main{
@@ -205,6 +220,18 @@
 				.listen_title{
 					font-size: 32px;
 					line-height: 70px;
+				}
+			}
+			.listen_player{
+				min-height: 320px;
+			}
+		}
+		.listen_main{
+			.listen_content{
+				.listen_title{
+					padding: 20px;
+					font-size: 15px;
+					align-self: center;
 				}
 			}
 		}
