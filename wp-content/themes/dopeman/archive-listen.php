@@ -55,10 +55,6 @@ get_header(); ?>
 				<div class="sidebar_category_article title">
 					Articles
 				</div>
-
-
-
-
 					<?php query_posts('cat=4&posts_per_page=8'); ?>
 					<?php
 					while ( have_posts() ) : the_post();
@@ -66,7 +62,7 @@ get_header(); ?>
 					$link = get_permalink();
 					$date= get_the_date('d.m.y');?>
 						<div class="link">
-							<a href="$link">
+							<a href="<?php echo $link; ?>">
 							<?php the_title(); ?>
 							</a>
 						</div>

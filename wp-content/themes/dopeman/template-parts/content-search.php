@@ -7,24 +7,24 @@
  * @package dopeman
  */
 
+	$link = get_permalink();
+	$date= get_the_date('d.m.y');					
+	$image = get_field('cover');
+	$img_read_top = $image['sizes']['category_read_top'];								
+  	$cat = get_the_category(); 
+	$cat = $cat[0]; 				
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php dopeman_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php dopeman_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+<div class="article article_three">
+  	<div class="article_container">
+	    <a href="<?php echo $link ?>">
+	  		<div class="category_article"><?php echo $cat->cat_name; ?></div>
+    	    <img src="<?php echo $img_read_top ?>">
+    	    <h4 class="article_title"><?php the_title();  ?>	    	
+    	    </h4>
+    	    <div class="display_date">
+    	    	<?php echo $date;  ?>
+    	    </div>
+	    </a>
+  	</div>
+</div>

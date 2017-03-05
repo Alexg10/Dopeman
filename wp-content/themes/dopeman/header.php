@@ -60,6 +60,7 @@
 							<li><a href="<?php echo the_field('spotify_link', 'option'); ?>" target="_blank"><i class="icon-spotify"></i></a></li>
 							<li><a href="<?php echo the_field('facebook_link', 'option'); ?>" target="_blank"><i class="icon-facebook"></i></a></li>
 							<li><a href="<?php echo the_field('twitter_link', 'option'); ?>" target="_blank"><i class="icon-twitter"></i></a></li>
+							<li><a href="<?php echo the_field('soundsgood_link', 'option'); ?>" target="_blank"><i class="icon-soundsgood-logo"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -73,6 +74,9 @@
 
 		<div class="btn_menu">
 			<span></span>
+			<div class="close">
+				
+			</div>
 		</div>
 	</div>
 	<div class="container layered_container grey_line"></div>

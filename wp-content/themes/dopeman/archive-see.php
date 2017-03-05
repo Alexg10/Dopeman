@@ -62,7 +62,7 @@ get_header(); ?>
 					$link = get_permalink();
 					$date= get_the_date('d.m.y');?>
 						<div class="link">
-							<a href="$link">
+							<a href="<?php echo $link; ?>">
 							<?php the_title(); ?>
 							</a>
 						</div>
@@ -83,9 +83,7 @@ get_header(); ?>
 				query_posts('cat=3&posts_per_page=18'); 
 
 				while ( have_posts() ) : the_post();
-					  $i++;
-
-
+					$i++;
 					$link = get_permalink();
 					$date= get_the_date('d.m.y');					
 					$image = get_field('cover');

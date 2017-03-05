@@ -262,7 +262,8 @@ pos_scroll =0;
 
 	//MOBILE BTN
 	$('.btn_menu').on('click', function(){
-		$('.main-navigation').toggleClass('open');
+		$('.main-navigation, .btn_menu').toggleClass('open');
+
 	});
 
 

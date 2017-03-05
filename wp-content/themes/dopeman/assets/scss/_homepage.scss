@@ -550,6 +550,40 @@
 
 
 
+//Search page
+.search-results{
+	.page-title{
+		margin: 0;
+		padding: 30px;
+		border-bottom: 1px solid $light-grey;
+		font-size: 18px;
+		line-height: 76px;
+		padding: 0 22px;
+		text-transform: uppercase;
+	}
+	.category{
+		.category_container{
+			width: 100%;
+			border-right: 1px solid $light-grey;
+		}
+	}
+}
+
+.search-no-results{
+	.page-title{
+		margin: 0;
+		padding: 30px;
+	}
+	.page-content{
+		margin: 0;
+	}
+	p{
+		margin: 0;
+		padding: 0 30px 30px;
+	}
+}
+
+
 @media screen and (max-width: 1100px){
 	.sub_nav{
 		.hot_shits{

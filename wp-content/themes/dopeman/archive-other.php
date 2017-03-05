@@ -68,7 +68,7 @@
 					$link = get_permalink();
 					$date= get_the_date('d.m.y');?>
 						<div class="link">
-							<a href="$link">
+							<a href="<?php echo $link; ?>">
 							<?php the_title(); ?>
 							</a>
 						</div>

@@ -34,3 +34,78 @@
 
 	}
 } 
+
+//Contact
+
+.form_message{
+	padding: 0 22px;
+	max-width: 750px;
+	margin: 0 auto;
+	font-size: 22px;
+	margin: 0 auto;
+	padding-top: 50px;
+	margin-bottom: 50px;
+}
+.wpcf7-form{
+	padding: 0 22px;
+	max-width: 750px;
+    margin: 0 auto;
+    p{
+    	margin: 0;
+    	padding-bottom: 1.5rem;
+    }
+	label{
+		font-size: 18px;
+		text-transform: uppercase;	
+	}
+ 
+	input,
+	input[type="text"], 
+	input[type="email"], 
+	input[type="url"], 
+	input[type="password"], 
+	input[type="search"], 
+	input[type="number"],
+	input[type="tel"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"], 
+	textarea{
+		border: none;
+		border-radius: 0;
+		border-bottom: 1px solid $black;
+		width: 100%;
+	}
+	textarea{
+		height: 150px;
+	}
+	.wpcf7-submit{
+		background-color: $black;
+		color: $white;
+		line-height: 48px;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		font-size: 18px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		&:hover{
+			box-shadow: none;
+		}
+		p &{}
+	}
+	div.wpcf7-validation-errors,
+	div.wpcf7-mail-sent-ok{
+		text-align: center;
+		border: none;
+		color: $black;
+		margin: 0;
+		padding-bottom: 30px;
+		transform: translateY(-10px);
+	}
+}
