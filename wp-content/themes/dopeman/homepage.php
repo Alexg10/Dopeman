@@ -134,7 +134,7 @@ Template Name: Home page
 					    	
 
 					<?php 
-						$reads = new WP_Query($read_article);
+						$reads = new WP_Query($song_article);
 
 						if($reads->have_posts()) : while ($reads->have_posts() ) : $reads->the_post();
 

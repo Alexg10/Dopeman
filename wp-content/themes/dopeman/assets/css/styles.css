@@ -555,7 +555,8 @@ a {
       margin-bottom: -2px;
       color: #1c1c1c;
       font-family: 'gotham_htfmedium';
-      font-weight: 100; }
+      font-weight: 100;
+      min-height: 54px; }
     .article .article_container .display_date {
       font-size: 14px;
       color: #555555;
@@ -3043,7 +3044,8 @@ y-axis
     display: inline-block;
     float: left; }
     .category .category_container .article .article_container {
-      overflow: hidden; }
+      overflow: hidden;
+      display: flex; }
     .category .category_container .article.article_two {
       width: 50%; }
     .category .category_container .article.article_three {
@@ -3065,7 +3067,7 @@ y-axis
         color: #fefefe;
         float: left;
         height: 100%;
-        padding: 30px; }
+        padding: 6px 30px; }
         .category .category_container .article.article_full_right .content_block .article_title {
           font-size: 34px;
           color: #fefefe;
