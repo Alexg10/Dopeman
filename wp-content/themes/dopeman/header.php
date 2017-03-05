@@ -21,6 +21,9 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/flickity.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.css">
 	<?php wp_head(); ?>
+
+<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png" />
+
 </head>
 
 <body <?php body_class(); ?>>
