@@ -1,0 +1,38 @@
+{
+    "key": "group_5862741800c08",
+    "title": "Vid\u00e9o Template",
+    "fields": [
+        {
+            "key": "field_58653b3dc1f39",
+            "label": "Lien vid\u00e9o",
+            "name": "video_link",
+            "type": "url",
+            "instructions": "Dans youtube partager -> integrer -> prendre la source de l'embed et ajouter \"?\" \u00e0 la fin du lien",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:clip"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1488721965
+}
