@@ -240,7 +240,7 @@ Template Name: Home page
 				<div class="article_container_height" data-posHeight="0">
 
 				<?php 
-					$songs = new WP_Query($song_article);
+					$songs = new WP_Query($read_article);
 					if($songs->have_posts()) : while ($songs->have_posts() ) : $songs->the_post();
 						$link = get_permalink();
 					  	$image = get_field('cover');
@@ -308,10 +308,11 @@ Template Name: Home page
 			<div class="container_name">
 				<p>Réponse...</p>
 			</div>
-			<div class="answer"></div>
+			<div class="answer">
 			<p>
 				<?php the_field('answer'); ?>
 			</p>
+			</div>
 		</div>
 	</div>
 </div>

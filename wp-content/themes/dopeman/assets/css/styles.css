@@ -1703,11 +1703,14 @@ y-axis
           line-height: 60px; }
 
 .question_playlist_container {
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex;
+  background-color: #1c221e; }
   .question_playlist_container .playlist_cta {
     display: inline-block;
     float: left;
-    width: 30%; }
+    width: 30%;
+    align-self: center; }
     .question_playlist_container .playlist_cta img {
       width: 100%; }
   .question_playlist_container .question_ans_container {
@@ -1718,6 +1721,7 @@ y-axis
     font-size: 60px;
     font-family: 'libre_baskervilleregular';
     width: 70%;
+    background-color: #fefefe;
     overflow: hidden;
     border-left: 1px solid #eeeeee; }
     .question_playlist_container .question_ans_container p {
@@ -1742,6 +1746,9 @@ y-axis
       .question_playlist_container .question_ans_container .answer_container.answer_container_visible {
         right: -54px !important;
         transition: all 0.4s ease; }
+      .question_playlist_container .question_ans_container .answer_container .answer {
+        font-size: 26px;
+        padding-right: 50px; }
       .question_playlist_container .question_ans_container .answer_container .container_name {
         font-size: 14px;
         font-family: 'gotham_htfmedium';
@@ -2212,7 +2219,7 @@ y-axis
     .data_post .data_main .data_img_container img {
       width: 100%; }
       .data_post .data_main .data_img_container img + img {
-        margin-top: -5px; }
+        margin-top: -6px; }
   .data_post .data_main .data_numbers_container {
     flex: 1; }
     .data_post .data_main .data_numbers_container .data_artist {
@@ -2290,7 +2297,7 @@ y-axis
     .listen_post .listen_top .listen_player .player_background img {
       -webkit-filter: blur(3px);
       filter: blur(3px);
-      height: 100%; }
+      width: 100%; }
   .listen_post .listen_top .listen_player .player {
     max-height: 160px; }
     .listen_post .listen_top .listen_player .player iframe {
@@ -2312,7 +2319,7 @@ y-axis
   border-bottom: 1px solid #eeeeee; }
   .listen_post .listen_main .listen_content .listen_title {
     padding: 30px;
-    font-size: 18px;
+    font-size: 16px;
     border-right: 1px solid #eeeeee;
     border-left: 1px solid #eeeeee;
     min-width: 222px;
@@ -2796,6 +2803,8 @@ y-axis
     line-height: 50px; }
     .video_post .clip_container .play_btn .icon-play {
       color: white; }
+  .video_post .clip_container img {
+    width: 100%; }
   .video_post .clip_container .embed_youtube {
     position: absolute;
     top: 0;
@@ -3046,12 +3055,17 @@ y-axis
     .category .category_container .article .article_container {
       overflow: hidden;
       display: flex; }
+      .category .category_container .article .article_container a {
+        width: 100%; }
+        .category .category_container .article .article_container a img {
+          width: 100%; }
     .category .category_container .article.article_two {
       width: 50%; }
     .category .category_container .article.article_three {
       width: 33.33%; }
       .category .category_container .article.article_three .article_title {
-        white-space: nowrap; }
+        height: 54px;
+        overflow: hidden; }
     .category .category_container .article.article_four {
       width: 25%; }
       .category .category_container .article.article_four .article_title {

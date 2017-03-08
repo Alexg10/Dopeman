@@ -282,10 +282,13 @@
 }
 .question_playlist_container{
 	overflow: hidden;
+	display: flex;
+	background-color: #1c221e;
 	.playlist_cta{
 		display: inline-block;
 		float: left;
 		width: 30%;
+		align-self: center;
 		img{
 			width: 100%;
 		}
@@ -298,6 +301,7 @@
 		font-size: 60px;
     	font-family: 'libre_baskervilleregular';
 		width: 70%;
+		background-color: $white;
 		overflow: hidden;
 		border-left: 1px solid $light-grey;
 		p{
@@ -326,6 +330,10 @@
 		    &.answer_container_visible{
 		    	right: -54px!important;
 				transition: all 0.4s ease;
+		    }
+		    .answer{
+		    	font-size: 26px;
+		    	padding-right: 50px;
 		    }
 			.container_name{
 				font-size: 14px;

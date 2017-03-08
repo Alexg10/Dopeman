@@ -3,6 +3,28 @@
     "title": "Article",
     "fields": [
         {
+            "key": "field_58bffe703f315",
+            "label": "Cat\u00e9gorie",
+            "name": "category",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "checkbox",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
             "key": "field_57b37d49dc4b2",
             "label": "Cover",
             "name": "cover",
@@ -58,5 +80,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1488721836
+    "modified": 1488977577
 }

@@ -99,14 +99,15 @@
 					$img_read_four = $image['sizes']['category_read_four'];
 					$img_read_block = $image['sizes']['category_read_right'];
 					$img_read_full = $image['sizes']['category_read_full'];
-				  	$cat = get_the_category(); 
 
+					$cat = get_field('category');
+					$categorie = get_cat_name($cat[0]);
 					?>
 
 					<div class="article article_three">
 					  	<div class="article_container">
 			    		    <a href="<?php echo $link ?>">
-						  		<div class="category_article"><?php echo $cat[0]->cat_name; ?></div>
+						  		<div class="category_article"><?php echo $categorie; ?></div>
 					    	    <img src="<?php echo $img_read_top ?>">
 					    	    <h4 class="article_title"><?php the_title();  ?>	    	
 					    	    </h4>

@@ -167,6 +167,12 @@
 			.article_container{
 				overflow: hidden;
 				display: flex;
+				a{
+					width: 100%;
+					img{
+						width: 100%;
+					}
+				}
 			}
 			&.article_two{
 				width: 50%;
@@ -174,7 +180,8 @@
 			&.article_three{
 				width: 33.33%;
 				.article_title{
-					white-space: nowrap;
+					height: 54px;
+					overflow: hidden;
 				}
 			}
 			&.article_four{
