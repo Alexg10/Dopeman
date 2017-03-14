@@ -21,23 +21,11 @@ get_header(); ?>
     	    	<?php get_template_part( 'archive-see', 'see' ); ?>
 	    	<?php elseif(is_category( 'listen' )) : ?>	     	 	
 	        	<?php get_template_part( 'archive-listen', 'listen' ); ?>
-
-
-
-
-
-
 			<?php elseif(is_category( 'news' )) : ?>
-		    	<?php get_template_part( 'archive-news', 'read' ); ?>
-			
-			
-				<?php
-
+		    	<?php get_template_part( 'archive-news', 'read' ); ?>	
+			<?php
 				else :
-
     	    	 get_template_part( 'archive-other', 'see' ); 
-					
-
 				endif; ?>
 
 			<?php endif; ?>

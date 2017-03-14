@@ -376,8 +376,12 @@
 			}
 		} 
 	}
+	.flickity-viewport{
+		height: 255px!important;	
+	}
 	.mixtape_slider{
-		padding: 30px 0; 		
+		padding: 30px 0; 	
+
 		.mixtape{
 			position: relative;
 			display: inline-block;

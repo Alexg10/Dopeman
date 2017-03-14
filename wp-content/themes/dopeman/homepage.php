@@ -67,30 +67,24 @@ Template Name: Home page
 </div>
 <div class="container grey_line mobile">
 	<div class="hot_shits_display">		
-			<?php 
-				// 2. on exécute la query
-				$week = date('W');
-				$year = date('Y');
 
-//A FAIRE DISPLAY PER WEEK
-				$big_shit = new WP_Query($args,'year=' . $year . '&w=' . $week);
-				// 3. on lance la boucle !
 
-				if($big_shit->have_posts()) : while ($big_shit->have_posts() ) : $big_shit->the_post();
-				    $post_ID = get_the_ID();
-					$link = get_permalink();
-					$category = get_the_category();
-					// var_dump($category);
-				  	$image = get_field('cover');
-				  	$cat = get_the_category(); 
-					$cat = $cat[0]; 
-				    $img_hot_shit = $image['sizes']['big-hot-shit'];
-				    $img_hot_shit_little = $image['sizes']['hot-shit'];
+				<?php $post_objects = get_field('hot_shits'); ?>	
+				<?php if( $post_objects ): ?>
+			    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+			        <?php setup_postdata($post); ?>
+			        <?php 
+			        	$image = get_field('cover');
+				    	$img_hot_shit = $image['sizes']['big-hot-shit'];
+				    	$img_hot_shit_little = $image['sizes']['hot-shit'];
 
-				    ?>		
+				    	$cat = get_field('category');
+						$categorie = get_cat_name($cat[0]);
+			         ?>
+
 				    <div class="single_shit <?php if (!$i++) echo "big";?>">	 
-				    	<a href="<?php echo $link ?>">
-					    <div class="category_article"><?php echo $cat->cat_name; ?></div>
+				    	<a href="<?php the_permalink(); ?>">
+					    <div class="category_article"><?php echo $categorie; ?></div>
 					    <div class="img_container">
 				    		<img src="<?php echo $i==1 ? $img_hot_shit : $img_hot_shit_little ; ?>">
 					    	
@@ -98,10 +92,13 @@ Template Name: Home page
 					    	<h4 class="shit_title"><?php the_title(); ?></h4>
 						</a> 
 					</div>
-				<?php endwhile;
-				endif;
-				wp_reset_postdata();
-			?>
+			    <?php endforeach; ?>
+			    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+			<?php endif; ?>
+
+
+
+
 	</div>
 </div>
 
@@ -194,14 +191,14 @@ Template Name: Home page
 					  	$image = get_field('cover');
 					    $img_hot_shit = $image['sizes']['big-hot-shit'];
 						$date= get_the_date('d.m.y');
-					  	$cat = get_the_category(); 
-						$cat = $cat[0]; 
+			    		$cat = get_field('category');
+						$categorie = get_cat_name($cat[0]);
 					    ?>		
 
 					    <div class="single_article article">
 					    	<div class="article_container">
 			    		    	<a href="<?php echo $link ?>">
-					    			<div class="category_article"><?php echo $cat->cat_name; ?></div>
+					    			<div class="category_article"><?php echo $categorie; ?></div>
 			    			    	<img src="<?php echo $img_hot_shit ?>">
 			    				    <h4 class="article_title"><?php the_title(); ?></h4>	
 			    				    <div class="display_date"><?php echo $date; ?></div>					       
@@ -246,14 +243,13 @@ Template Name: Home page
 					  	$image = get_field('cover');
 					    $img_hot_shit = $image['sizes']['big-hot-shit'];
 						$date= get_the_date('d.m.y');
-						$cat = get_the_category(); 
-						$cat = $cat[0]; 
-
+			    		$cat = get_field('category');
+						$categorie = get_cat_name($cat[0]);
 					    ?>		
 					    <div class="single_article article ">	 
 		    		    	<div class="article_container">
 		        		    	<a href="<?php echo $link ?>">
-					    			<div class="category_article"><?php echo $cat->cat_name; ?></div>
+					    			<div class="category_article"><?php echo $categorie; ?></div>
 		        			    	<img src="<?php echo $img_hot_shit ?>">
 		        				    <h4 class="article_title"><?php the_title(); ?></h4>	
 		        				    <div class="display_date"><?php echo $date; ?></div>					       

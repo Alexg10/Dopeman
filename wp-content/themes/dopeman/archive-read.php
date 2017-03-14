@@ -100,7 +100,7 @@ get_header(); ?>
 						  	<div class="article_container">
 				    		    <a href="<?php echo $link ?>">
 
-							  		<div class="category_article"><?php echo $categorie ?></div>
+							  		<div class="category_article"><?php echo $categorie; ?></div>
 						    	    <img src="<?php echo $img_read_top ?>">
 						    	    <h4 class="article_title slideTxt">
 						    	    <span><?php the_title();  ?>	</span>    	
@@ -121,7 +121,7 @@ get_header(); ?>
 							  	<div class="article_container">
 					    		    <a href="<?php echo $link ?>">
 
-								  		<div class="category_article"><?php echo $cat->cat_name; ?></div>
+								  		<div class="category_article"><?php echo $categorie; ?></div>
 							    	    <img src="<?php echo $img_read_four; ?>">
 							    	    <h4 class="article_title slideTxt">
 							    	    <span><?php the_title();  ?></span>	    	
@@ -145,7 +145,7 @@ get_header(); ?>
 						  	<div class="article_container">
 				    		    <a href="<?php echo $link ?>">
 
-							  		<div class="category_article"><?php echo $cat->cat_name; ?></div>
+							  		<div class="category_article"><?php echo $categorie; ?></div>
 						    	    <img src="<?php echo $img_read_block; ?>">
 						    	    <div class="content_block">
 						    	    	<h4 class="article_title"><?php the_title();  ?>	    	
@@ -166,7 +166,7 @@ get_header(); ?>
 						  	<div class="article_container">
 				    		    <a href="<?php echo $link ?>">
 
-							  		<div class="category_article"><?php echo $cat->cat_name; ?></div>
+							  		<div class="category_article"><?php echo $categorie; ?></div>
 						    	    <img src="<?php echo $img_read_top; ?>">
 						    	    <div class="content_block">
 						    	    	<h4 class="article_title"><?php the_title();  ?>	    	
@@ -190,7 +190,7 @@ get_header(); ?>
 						  	<div class="article_container">
 				    		    <a href="<?php echo $link ?>">
 
-							  		<div class="category_article"><?php echo $cat->cat_name; ?></div>
+							  		<div class="category_article"><?php echo $cat; ?></div>
 						    	    <img src="<?php echo $img_read_full; ?>">
 						    	    <h4 class="article_title"><?php the_title();  ?>	    	
 						    	    </h4>

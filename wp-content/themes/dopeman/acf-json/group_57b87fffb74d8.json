@@ -3,6 +3,46 @@
     "title": "Homepage",
     "fields": [
         {
+            "key": "field_58c6924ebda49",
+            "label": "Hot shits",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58c69202bda48",
+            "label": "Hot Shits",
+            "name": "hot_shits",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+
+            ],
+            "taxonomy": [
+
+            ],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
             "key": "field_57b88007893af",
             "label": "Question\/ R\u00e9ponse",
             "name": "",
@@ -132,5 +172,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1488721903
+    "modified": 1489429606
 }

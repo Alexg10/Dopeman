@@ -237,7 +237,6 @@ pos_scroll =0;
 		$('.play_btn').fadeOut();
 		$('.embed_youtube').css('position','relative');
 		$('.embed_youtube').css('zIndex','1');
-
 		$('.embed_youtube')[0].src += "&autoplay=1";
 	})
 
@@ -263,7 +262,6 @@ pos_scroll =0;
 	//MOBILE BTN
 	$('.btn_menu').on('click', function(){
 		$('.main-navigation, .btn_menu').toggleClass('open');
-
 	});
 
 
