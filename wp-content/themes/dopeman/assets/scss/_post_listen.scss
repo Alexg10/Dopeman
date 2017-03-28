@@ -4,7 +4,6 @@
 .listen_post{
 	.container_listen{
 		overflow: hidden;
-
 	}
 
 	.listen_top{
@@ -17,7 +16,7 @@
 			.listen_title{
 				font-size: 62px;
 	    		font-family: 'libre_baskervilleregular';
-				line-height: 110px;
+				line-height: 100px;
 				padding: 0 30px;
 			}
 		}
@@ -40,7 +39,11 @@
 					-webkit-filter: blur(3px);
 					filter: blur(3px);
 					width: 100%;
-				}			
+				}	
+				.acf-media-credit{
+					right: 26px;
+					bottom: 4px;
+				}		
 			}
 			.player{
 				max-height: 160px;

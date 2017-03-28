@@ -41,7 +41,12 @@ Description: This part is optional, but helpful for describing the Post Template
 					$data_images = get_field('gallerie');
 
 					foreach( $data_images as $image ): ?>
-					  <img src="<?php echo $image['sizes']['data-img']; ?>" alt="<?php echo $image['alt']; ?>" />
+						<div class="credit_container">
+
+						  <img src="<?php echo $image['sizes']['data-img']; ?>" alt="<?php echo $image['alt']; ?>" />
+							<?php echo the_media_credit($image['ID']); ?>
+						</div>
+
 					<?php endforeach; ?>
 				</div>
 				<div class="data_numbers_container">

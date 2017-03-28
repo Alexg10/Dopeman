@@ -48,16 +48,17 @@
 			<div class="single_info_container">
 				<div class="single_title"><?php the_title(); ?></div>
 			</div>
-			<div class="single_player">
+			<div class="single_player credit_container">
 				<?php 
 					$playlist_background = get_field('article_cover'); 
+					echo the_media_credit($playlist_background['ID']);
 				?>
 				<div class="player_background" style="background-image: url('<?php echo $playlist_background['sizes']['player_background'];?>')">
 	
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> 
 	<div class="container single_main_content grey_line">
 
 	<?php
@@ -74,10 +75,14 @@
 			        		<div class="medias">
 								<?php $medias = get_sub_field('medias');
 								 $img = get_sub_field('content_img')['sizes']['data-img'];
+								 $credit = get_sub_field('content_img')['ID'];
 								 if($medias != ''):
 								 	echo $medias;
+
 								 elseif ($img !=''): ?>
-								<img src="<?php echo $img ?>">
+									<img src="<?php echo $img ?>">
+									<?php echo the_media_credit($credit); ?>
+
 							<?php endif; ?>
 
 			        			

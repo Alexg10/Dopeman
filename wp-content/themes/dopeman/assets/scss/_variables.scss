@@ -240,6 +240,49 @@ a{
 		text-decoration: none;
 		color: $black;
 	}
+} 
+
+.credit_container{
+	position: relative;
+}
+.acf-media-credit{
+	position: absolute;
+	right: 20px;
+	bottom: -10px; 
+	transition: all 0.4s ease;
+	&:before{
+		content:'©';
+		position: absolute;
+		top: 2px;
+		right: -15px;
+		font-size: 14px;
+		color: rgba($white, 0.6)!important;
+	}
+	.acf-credit{
+	    overflow: hidden;
+	    display: block;
+    	text-align: right;
+    	visibility: hidden;
+    	opacity: 0;
+		transition: all 0.8s ease;
+	}
+	&:hover{
+		.acf-credit{
+	    	min-width: 100px;
+		    overflow: hidden;
+		    display: block;	  
+        	opacity: 1;
+        	visibility: visible;
+			transition: all 0.8s ease;
+
+		}
+	}
+	a{
+		color: rgba($white, 0.6)!important;
+		font-size: 11px;
+    	font-family: 'gotham_htfmedium';
+    	white-space: nowrap;
+	}
 }
 
 /* mixin for multiline */
@@ -257,7 +300,7 @@ a{
     right: 0;
     bottom: 0;
   }
-  &:after {
+  &:after { 
     content: '';
     position: absolute;
     right: 0;

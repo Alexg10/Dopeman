@@ -294,10 +294,3 @@ function my_get_event( $query ) {
 
 
 
-
-
-
-
-
-
-

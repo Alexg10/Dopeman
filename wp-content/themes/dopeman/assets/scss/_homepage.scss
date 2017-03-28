@@ -48,6 +48,17 @@
 		float: left;
 		width:33%;
 		padding-right: 30px;
+		&.credit_container{
+			.acf-media-credit{
+				bottom: 30px; 
+				right: 50px;
+			}
+			&:hover{
+				.acf-media-credit{
+					bottom: 50px; 
+				}
+			}
+		}
 		.img_container{
 			max-height: 218px;
 			overflow: hidden;
@@ -71,18 +82,17 @@
 			.category_article{
 				left: 40px;
 			}
+
 		}
 		&:last-of-type{
-			.shit_title{
-				margin-bottom: 0;
-			}
+			margin-top: 33px;
 		}
 		.shit_title{
 			font-size: 18px;
 			border-bottom: 3px solid $black;
 			margin-top: 3px;
+			margin-bottom: 0;
 			padding-bottom: 6px;
-			margin-bottom: 33px;
 			font-weight: 300;
 			letter-spacing: 1px;
     		font-family: 'gotham_htfmedium';
@@ -170,6 +180,7 @@
 				bottom: -59px;
 				border-left: 1px solid $light-grey;
 			}
+
 		}
 		&.read{
 			width: 40%;

@@ -8,8 +8,6 @@
  */
 
 
-
-
 get_header(); ?>
 
 
@@ -30,9 +28,6 @@ get_header(); ?>
 		</div>	
 	</div>
 		<main id="read_category_display" class="read_category category" role="main">
-
-
-
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -67,9 +62,7 @@ get_header(); ?>
 							</a>
 						</div>
 					
-						  <?php
-
-
+					<?php
 					endwhile; 
 					wp_reset_postdata();?>
 			
@@ -94,15 +87,13 @@ get_header(); ?>
 					
 					$cat = get_field('category');
 					$categorie = get_cat_name($cat[0]);
+					$credit = $image['ID']
 
 					?>
 
-		
-
 						<div class="article article_three">
-						  	<div class="article_container">
+						  	<div class="article_container credit_container">
 				    		    <a href="<?php echo $link ?>">
-
 							  		<div class="category_article"><?php echo $categorie; ?></div>
 						    	    <img src="<?php echo $img_read_top ?>">
 						    	    <h4 class="article_title"><?php the_title();  ?>	    	
@@ -111,14 +102,11 @@ get_header(); ?>
 						    	    	<?php echo $date;  ?>
 						    	    </div>
 					    	    </a>
+								<?php echo the_media_credit($credit); ?>
 						  	</div>
 						  </div>
-
-				
-
 					  <?php
 					  endwhile; ?>
-				
 			</div>
 		</div>
 
@@ -134,23 +122,11 @@ get_header(); ?>
 					    'next_text' => __( 'Suivante<i class="icon-arrow-right"></i>', 'textdomain' ),
 					) ); ?>
 				</div>
-
-
 			</div>
 			<div class="grey_line"></div>
 			<div class="container layered_container grey_line"></div>
 
 			<div class="container grey_line">
-
-
-
-
-
-
-	
-
-
-
 		<?php endif; ?>
 
 		</main><!-- #main -->

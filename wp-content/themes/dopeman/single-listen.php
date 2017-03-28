@@ -59,6 +59,8 @@ Description: This part is optional, but helpful for describing the Post Template
 						$playlist_background = get_field('playlist_background'); 
 						?>
 						<img src="<?php echo $playlist_background['sizes']['player_background'];?>">
+						<?php echo the_media_credit($playlist_background['ID']); ?>
+
 					</div>
 					<div class="player">
 						<?php the_field('song_link'); ?>

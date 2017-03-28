@@ -78,17 +78,18 @@ Template Name: Home page
 				    	$img_hot_shit = $image['sizes']['big-hot-shit'];
 				    	$img_hot_shit_little = $image['sizes']['hot-shit'];
 
+				    	
 				    	$cat = get_field('category');
 						$categorie = get_cat_name($cat[0]);
 			         ?>
 
 				    <div class="single_shit <?php if (!$i++) echo "big";?>">	 
 				    	<a href="<?php the_permalink(); ?>">
-					    <div class="category_article"><?php echo $categorie; ?></div>
-					    <div class="img_container">
-				    		<img src="<?php echo $i==1 ? $img_hot_shit : $img_hot_shit_little ; ?>">
-					    	
-					    </div>
+					    	<div class="category_article"><?php echo $categorie; ?></div>
+					    	<div class="img_container">
+					    		<img src="<?php echo $i==1 ? $img_hot_shit : $img_hot_shit_little ; ?>">
+						    	
+					    	</div>
 					    	<h4 class="shit_title"><?php the_title(); ?></h4>
 						</a> 
 					</div>
@@ -189,6 +190,7 @@ Template Name: Home page
 					if($videos->have_posts()) : while ($videos->have_posts() ) : $videos->the_post();
 						$link = get_permalink();
 					  	$image = get_field('cover');
+
 					    $img_hot_shit = $image['sizes']['big-hot-shit'];
 						$date= get_the_date('d.m.y');
 			    		$cat = get_field('category');
@@ -200,10 +202,12 @@ Template Name: Home page
 			    		    	<a href="<?php echo $link ?>">
 					    			<div class="category_article"><?php echo $categorie; ?></div>
 			    			    	<img src="<?php echo $img_hot_shit ?>">
+
 			    				    <h4 class="article_title"><?php the_title(); ?></h4>	
 			    				    <div class="display_date"><?php echo $date; ?></div>					       
 
 			    				</a> 
+
 					    	</div>	
 						</div>
 					<?php endwhile;
@@ -245,6 +249,7 @@ Template Name: Home page
 						$date= get_the_date('d.m.y');
 			    		$cat = get_field('category');
 						$categorie = get_cat_name($cat[0]);
+						$credit = $image['ID']
 					    ?>		
 					    <div class="single_article article ">	 
 		    		    	<div class="article_container">
@@ -253,8 +258,8 @@ Template Name: Home page
 		        			    	<img src="<?php echo $img_hot_shit ?>">
 		        				    <h4 class="article_title"><?php the_title(); ?></h4>	
 		        				    <div class="display_date"><?php echo $date; ?></div>					       
-
 		        				</a> 
+
 		    		    	</div>	
 						</div>
 					<?php endwhile;
@@ -345,7 +350,7 @@ Template Name: Home page
 	</div>
 </div>
 <div class="container layered_container grey_line"></div>
-<div class="container event_container grey_line">
+<!-- <div class="container event_container grey_line">
 	<div class="event_header">
 		<h2><?php echo "évènnement$ hip-hop" ?></h2>
 		<div class="switch">
@@ -389,7 +394,7 @@ Template Name: Home page
 		</div>
 	</div>
 	
-</div>
+</div> -->
 
 
 

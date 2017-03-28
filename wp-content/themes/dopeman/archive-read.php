@@ -80,7 +80,6 @@ get_header(); ?>
 
 				while ( have_posts() ) : the_post();
 
-
 					$link = get_permalink();
 					$date= get_the_date('d.m.y');					
 					$image = get_field('cover');
@@ -91,13 +90,14 @@ get_header(); ?>
 					
 					$cat = get_field('category');
 					$categorie = get_cat_name($cat[0]);
+					$credit = $image['ID']
 
 					?>
 
 					<?php if($i <= 2): ?>
 
 						<div class="article article_two">
-						  	<div class="article_container">
+						  	<div class="article_container credit_container">
 				    		    <a href="<?php echo $link ?>">
 
 							  		<div class="category_article"><?php echo $categorie; ?></div>
@@ -109,6 +109,7 @@ get_header(); ?>
 						    	    	<?php echo $date;  ?>
 						    	    </div>
 					    	    </a>
+								<?php echo the_media_credit($credit); ?>
 						  	</div>
 						  </div>
 						  <?php if ($i==2): ?>
@@ -118,7 +119,7 @@ get_header(); ?>
 					<?php elseif($i >= 3 && $i <=6): ?>
 
 							<div class="article article_four">
-							  	<div class="article_container">
+							  	<div class="article_container credit_container">
 					    		    <a href="<?php echo $link ?>">
 
 								  		<div class="category_article"><?php echo $categorie; ?></div>
@@ -130,7 +131,7 @@ get_header(); ?>
 							    	    	<?php echo $date;  ?>
 							    	    </div>
 						    	    </a>
-
+									<?php echo the_media_credit($credit); ?>
 							  	</div>
 							  </div>
 
@@ -138,15 +139,15 @@ get_header(); ?>
 							  	<div class="clearfix"></div>
 							  <?php endif ?>
 
-
 					<?php elseif($i == 7): ?>
 
 						<div class="article article_full_right">
-						  	<div class="article_container">
+						  	<div class="article_container credit_container">
 				    		    <a href="<?php echo $link ?>">
-
 							  		<div class="category_article"><?php echo $categorie; ?></div>
-						    	    <img src="<?php echo $img_read_block; ?>">
+							  		<span class="img_container" style="background-image: url('<?php echo $img_read_block; ?>')">
+						    	    	<img src="<?php  ?>">
+							  		</span>
 						    	    <div class="content_block">
 						    	    	<h4 class="article_title"><?php the_title();  ?>	    	
 						    	    	</h4>
@@ -154,16 +155,15 @@ get_header(); ?>
 						    	    		<?php echo $date;  ?>
 						    	    	</div>
 						    	    </div>
-			
 					    	    </a>
+								<?php echo the_media_credit($credit); ?>
 						  	</div>
 						</div>
-
 
 					<?php elseif($i >= 8 && $i <=11): ?>
 
 						<div class="article article_four_text">
-						  	<div class="article_container">
+						  	<div class="article_container credit_container">
 				    		    <a href="<?php echo $link ?>">
 
 							  		<div class="category_article"><?php echo $categorie; ?></div>
@@ -176,7 +176,7 @@ get_header(); ?>
 						    	    	</div>
 						    	    </div>
 					    	    </a>
-
+								<?php echo the_media_credit($credit); ?>
 						  	</div>
 						  </div>
 
@@ -184,12 +184,11 @@ get_header(); ?>
 						  	<div class="clearfix"></div>
 						  <?php endif ?>
 
-
 					<?php elseif($i == 12): ?>
-						<div class="article article_full">
-						  	<div class="article_container">
-				    		    <a href="<?php echo $link ?>">
 
+						<div class="article article_full">
+						  	<div class="article_container credit_container">
+				    		    <a href="<?php echo $link ?>">
 							  		<div class="category_article"><?php echo $cat; ?></div>
 						    	    <img src="<?php echo $img_read_full; ?>">
 						    	    <h4 class="article_title"><?php the_title();  ?>	    	
@@ -198,13 +197,12 @@ get_header(); ?>
 						    	    	<?php echo $date;  ?>
 						    	    </div>
 					    	    </a>
+								<?php echo the_media_credit($credit); ?>
 						  	</div>
 						  </div>
-
-						  <?php if ($i==12): ?>
-						  	<div class="clearfix"></div>
-						  <?php endif ?>
-
+						<?php if ($i==12): ?>
+							<div class="clearfix"></div>
+						<?php endif ?>
 					<? endif;
 					$i++; 
 					?>
@@ -227,7 +225,6 @@ get_header(); ?>
 			<div class="container layered_container grey_line"></div>
 
 			<div class="container grey_line">
-
 
 		<?php endif; ?>
 

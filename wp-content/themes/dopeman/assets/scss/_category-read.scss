@@ -167,6 +167,7 @@
 			.article_container{
 				overflow: hidden;
 				display: flex;
+				width: 100%;
 				a{
 					width: 100%;
 					img{
@@ -176,12 +177,24 @@
 			}
 			&.article_two{
 				width: 50%;
+				.article_container.credit_container{
+					.acf-media-credit{
+						bottom: initial; 
+						top: 240px;
+					}
+				}
 			}
 			&.article_three{
 				width: 33.33%;
 				.article_title{
 					height: 54px;
 					overflow: hidden;
+				}
+				.article_container.credit_container{
+					.acf-media-credit{
+						bottom: initial; 
+						top: 150px;
+					}
 				}
 			}
 			&.article_four{
@@ -190,28 +203,47 @@
 					height: 86px;
     				overflow: hidden;
 				}
+				.article_container.credit_container{
+					.acf-media-credit{
+						bottom: initial; 
+						top: 98px;
+					}
+				}
 			}
 			&.article_full_right{
 				width: 100%;
 				position: relative;
 				display: flex;
+				.img_container{
+					display: inline-block;
+    				height: 100%;
+					width: 75%;
+					background-size: cover;
+					background-position: 50%;
+				}
 				.content_block{
 					width: 25%;
 					background-color: $black;
-					color:$white;
-					float:left;
+					color: $white;
+					float:right;
 					height: 100%;
 				    padding: 6px 30px;
+			        min-height: 480px;
 					.article_title{
-						font-size: 34px;
+						font-size: 33px;
 						color:$white;
     					font-family: 'gotham_htfmedium';
-
+					}
+				}
+				.article_container.credit_container{
+					.acf-media-credit{
+						bottom: 8px; 
+						right: 28%;
 					}
 				}
 				img{
 					width: 75%;
-					float:left;
+					float:left; 
 				}
 			}
 			&.article_four_text{
@@ -226,10 +258,9 @@
 					float:left;
 				}
 				.content_block{
-					width: 50%;
+					width: 100%;
 					float:left;
-					height: 101%;
-					padding: 0 20px;
+					padding: 0px;
 					position: relative;
 					margin-top: -3px;
 					&:after{
@@ -237,22 +268,26 @@
 						position: absolute;
 						bottom: 0;
 						left: 50%;
-						width: calc(100% - 40px);
+						width: 100%;
 						background: $black;
 						height: 3px;
 						transform: translateX(-50%);
 					}
 					.article_title{
-						margin-top: -2px;
+						margin-top: 18px;
 						font-size: 17px;
 						line-height: 22px;
 						max-height: 86px;
 						overflow: hidden;
 					}
 					.display_date{
-						margin-top: 10px;
-						position: absolute;
 						bottom: -6px;
+					}
+				}
+				.article_container.credit_container{
+					.acf-media-credit{
+						bottom: initial; 
+						top: 238px;
 					}
 				}
 			}
@@ -265,6 +300,12 @@
 					font-size: 72px;
 					line-height: 80px;
 					margin-top: 0px;
+				}
+				.article_container.credit_container{
+					.acf-media-credit{
+					    top: 520px;
+					    right: 30px;
+					}
 				}
 			}
 		}

@@ -61,7 +61,8 @@ Description: This part is optional, but helpful for describing the Post Template
 				<div class="play_btn">
 					<i class="icon-play"></i>
 				</div>
-				
+					
+				<?php echo the_media_credit($image['ID']); ?>
 				
 			</div>
 			<div class="video_top">
