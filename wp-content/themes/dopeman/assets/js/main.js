@@ -16,7 +16,6 @@ $( document ).ready(function() {
 	var questionContainerWidth = $('.question_ans_container').outerWidth();
 	answerContainerWidth= $('.answer_container').outerWidth();
 	var answer_container = questionContainerWidth -45;
-	console.log(answer_container); 
 	$('.answer_container').css('width',questionContainerWidth);
 
 	$('.answer_container').css('right',-answer_container);
@@ -32,7 +31,6 @@ $( document ).ready(function() {
 			$('.answer_container').animate({
 				'min-height': "390px",
 			}, 400);
-			console.log("kndsf");
 		}else{
 			setTimeout(function(){
 				$('.answer_container').animate({
@@ -45,7 +43,7 @@ $( document ).ready(function() {
 
 	$('.section_title').on('click', function(){
 		var lastClass = $('.article_display_cat').attr('class').split(' ').pop();
-		console.log(lastClass);
+
 		
 		$('.article_display_cat').removeClass(lastClass);
 		$('.section_title').removeClass('active');
@@ -185,7 +183,6 @@ pos_scroll =0;
 	});
 
 
-
 	// $(document).on("mouseenter", ".article", function(e) {
 	//  	$(this).addClass('hover');
 	// });
@@ -204,14 +201,6 @@ pos_scroll =0;
 	// 	 	$(this).find('.slideTxt').trigger('mouseover');
 	// 	}
 	// })
-
-
-
-
-		// $('.slideTxt').jTicker({
-		// duration : 1000, // speed
-		// effect   : 'linear' // animation type	 
-		// });
 
 
 
@@ -271,10 +260,124 @@ pos_scroll =0;
 
 
 
+	//HORIZONTAL SCROLL SONG
+
+	// windowW= $(window).width();
+
+	// if(windowW > 800){
+	// 	i=0;
+	// 	$( ".title-wrapper" ).each(function() {
+
+	// 		var $holder = $(this);
+	// 		var $list = $holder.find("ul.title-list");
+
+	// 		articleArtist = $list.find('.article_artist');
+	// 		articleTitle = $list.find('.article_title');
+	// 		articleArtistW = articleArtist.width();
+	// 		articleTitletW = articleTitle.innerWidth();
+
+	// 		//SET LEFT TITLE POSITION
+	// 		articleTitle.css({
+	// 			"left": articleArtistW+20,
+	// 			"width": articleTitletW
+	// 			});
+
+	// 		var $listUW = $list.width();
+	// 		var $clonedList = $list.clone();
+	// 		var listWidth = $list.find("li").length;
+	// 		var endPos = $holder.width() - listWidth;
+	// 		var listWidth = articleTitletW + articleArtistW + 100 ;
+
+	// 		$list.find("li").css('width' , listWidth );	
+	// 		$clonedList.find("li").css('width' , listWidth );	
+
+	// 		if( listWidth > 750){
+	// 			$clonedList.addClass("cloned").appendTo($holder);
+
+	// 		var AnimName= "infinite"+i;
+
+	// 		$holder.attr( 'anim', AnimName );
+
+	// 		//TimelineMax
+	// 		var AnimName = new TimelineMax({repeat: -1, paused: false});
+	// 		var time = 2;
+
+	// 		AnimName.fromTo($list, time, {left:0}, {left: -listWidth, ease: Linear.easeNone}, 0);
+	// 		AnimName.fromTo($clonedList, time, {left:listWidth}, {left:0, ease: Linear.easeNone}, 0);
+	// 		AnimName.set($list, {left: listWidth});
+	// 		AnimName.to($clonedList, time, {left: -listWidth, ease: Linear.easeNone}, time);
+	// 		AnimName.to($list, time, {left: 0, ease: Linear.easeNone}, time);
+			
+	// 		AnimName.pause();
+
+	// 		//Pause/Play
+	// 		$holder.on("mouseenter", function(){
+	// 			// $clonedList.addClass("visible");
+	// 			AnimName.play();
+	// 			$(this).find('.cloned').animate({'opacity': "1"}, 200); 
+
+	// 		}).on("mouseleave", function(){
+	// 			// $clonedList.removeClass("visible");
+	// 			AnimName.pause();
+	// 			$(this).find('.cloned').animate({'opacity': "0", "left" : listWidth}, 800);
+	// 				$('.title-list:not(.cloned)').animate({'left': "0px"}, 800, "swing"); 
+	// 		});
+	// 		i++;
+	// 		}
+
+	// 	});
+	// }
+
+	//token 4089084524.1677ed0.8dcb32e3183e41fcbaad5cd4012ad6ae
+	var token = '4089084524.1677ed0.8dcb32e3183e41fcbaad5cd4012ad6ae', // learn how to obtain it below
+	    userid = 4089084524, // User ID - get it in source HTML of your Instagram profile or look at the next example :)
+	    num_photos = 10; // how much photos do you want to get
+	 
+	$.ajax({
+		url: 'https://api.instagram.com/v1/users/' + userid + '/media/recent', // or /users/self/media/recent for Sandbox
+		dataType: 'jsonp',
+		type: 'GET',
+		data: {access_token: token, count: num_photos},
+		success: function(data){
+	 		console.log(data);
+			for( x in data.data ){
+				$('#rudr_instafeed').append('<li><a href="https://www.instagram.com/dopeman_magazine/" target="_blank"><img src="'+data.data[x].images.low_resolution.url+'"></a></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
+				// data.data[x].images.thumbnail.url - URL of image 150х150
+				// data.data[x].images.standard_resolution.url - URL of image 612х612
+				// data.data[x].link - Instagram post URL 
+			}
+				var insta_wall = $('#rudr_instafeed').flickity({
+				  cellAlign: 'left',
+				  contain: true,
+				  isWrapped: true,
+				  pageDots: false,
+				  prevNextButtons: false
+				});
+				insta_wall.data('flickity');
+
+				var mixtape_prev = $('.insta_header .btn_prev');
+				var mixtape_next = $('.insta_header .btn_next');
+
+				mixtape_prev.on( 'click', function() {
+				  insta_wall.flickity('previous');
+				});
+
+				mixtape_next.on( 'click', function() {
+				  insta_wall.flickity('next');
+				});
+
+		},
+		error: function(data){
+			console.log(data); // send the error notifications to console
+		}
+	});
+
+		//SLIDER WALL INSTA
 
 
 
 
 
-	
+
+
 });

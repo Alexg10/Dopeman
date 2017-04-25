@@ -294,14 +294,21 @@
 .question_playlist_container{
 	overflow: hidden;
 	display: flex;
+	max-height: 400px;
 	background-color: #1c221e;
 	.playlist_cta{
 		display: inline-block;
 		float: left;
 		width: 30%;
-		align-self: center;
 		img{
 			width: 100%;
+		}
+		a{
+		    display: block;
+    		height: 100%;
+    		min-height: 400px;
+    		background-size: cover;
+    		background-position: 50%;
 		}
 	}
 	.question_ans_container{
@@ -391,7 +398,9 @@
 		height: 255px!important;	
 	}
 	.mixtape_slider{
-		padding: 30px 0; 	
+		padding: 30px 0; 
+		padding-left: 10px;	
+		padding-bottom: 0;
 
 		.mixtape{
 			position: relative;
@@ -431,9 +440,6 @@
 					background-color: white;
 					border-radius: 100px;
 				}
-			}
-			&:first-of-type{
-				padding-left: 30px;
 			}
 			img{
 				border-radius: 100px;
@@ -565,8 +571,53 @@
 			.event_place{
     			font-family: 'libre_baskervilleregular';
     			font-size: 15px;
-
 			}
+		}
+	}
+}
+
+//Insta
+.wall_insta{
+	overflow: hidden;
+	.insta_header{
+		display: block;
+		border-bottom: 1px solid $light-grey;
+		line-height: 76px;
+		padding-left: 30px;
+		position: relative;
+		h2{
+			margin: 0;
+			font-size: 18px;
+			text-transform: uppercase;
+			font-family: 'Oswald', sans-serif; 
+			font-weight: normal;
+			@media screen and (max-width: $mobile){
+				text-align: center;
+			}
+			a{
+				color: $black;
+			}
+		}
+		.switch{
+			float: right;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 144px;
+			@media screen and (max-width: $mobile){
+				display: none;
+			}
+		} 
+	}
+	.flickity-enabled.is-draggable .flickity-viewport{
+		height: 260px!important;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		li{
+			list-style-type: none;
+			width: 260px;
 		}
 	}
 }

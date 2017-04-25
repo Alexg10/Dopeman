@@ -27,7 +27,7 @@
 				<div class="page_title"><?php echo $cat->cat_name; ?> : <div class="data_artist"><?php the_title(); ?></div></div>					
 			</div>
 			<div class="share_article">
-				<span class="share">Partager le clip :</span>
+				<span class="share">Partager :</span>
 				<ul>
 					<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() ?>" target="_blank"><i class="icon-facebook"></i></a></li>
 					<li><a href="https://twitter.com/home?status=<?php echo get_permalink() ?>" target="_blank"><i class="icon-twitter"></i></a></li>

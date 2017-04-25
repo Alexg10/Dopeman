@@ -61,13 +61,7 @@ a{
 	&.layered_container{
 		height: 50px;
 		width: 100%;
-		background: repeating-linear-gradient(
-		  -45deg,
-		  $black,
-		  $black 1px,
-		  $white 1px,
-		  $white 7px
-		);
+		background-image: url('../img/line-repeat.jpg');
 	}
 	@media screen and (max-width: $large){
 		max-width: 1180px; 

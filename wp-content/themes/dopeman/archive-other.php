@@ -7,28 +7,16 @@
  * @package dopeman
  */
 
-
-
-
 	get_header(); 
 
-   	// $cat_id = the_category_ID();
-   	// $idObj = get_category_by_slug('numbers'); 
-   	// $id = $idObj->term_id;
-   	// $catcat= get_the_category_by_ID($id);
-
-
-
 ?>
-<?php 
 
-?>
 
 	<div id="read" class="content-area read_category">
 		<div class="container">
 			<div class="read_top grey_line">
 				<div class="page_title_container">
-					<div class="page_title">Other!</div>						
+					<div class="page_title"><?php echo get_the_category()[1]->name; ?></div>						
 				</div>
 				<div class="switch">
 					<div class="btn_prev">
@@ -49,21 +37,29 @@
 				<div class="sidebar_category_filter title">
 					Filtres
 				</div>	
-				<?php
-					$categories = get_categories( 'child_of='+$catcat+'&hide_empty=0');
+
+				<?php 
+				    echo '<ul class="category_list">';
+				    $post_child_cat = array();
+				    foreach((get_the_category()) as $cat) {
+				        $args = array( 'child_of' => $cat->cat_ID );
+				        $categories = get_categories( $args );
+				        if( $categories ) foreach( $categories as $category ) {
+				            echo '<li class="cat-item cat-item-'.$category->term_id.'">'.
+				            '<a title="'.$category->description.'" href="';
+				            echo bloginfo('url');
+				            echo '/category/'.$cat->slug.'/'.$category->slug.'">'.
+				            $category->name.'</a></li>'; 
+				        }
+				    }
+				   echo '</ul>';
 				?>
-				<ul class="category_list">
-					<?php 
-					foreach($categories as $category) { 
-					    echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a></li>';  
-					}
-					?>					
-				</ul>
 				<div class="sidebar_category_article title">
 					Articles
 				</div>
 					<?php
 					while ( have_posts() ) : the_post();
+
 
 					$link = get_permalink();
 					$date= get_the_date('d.m.y');?>

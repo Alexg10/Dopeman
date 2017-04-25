@@ -85,7 +85,8 @@ get_header(); ?>
 					$image = get_field('cover');
 					$img_read_top = $image['sizes']['category_read_top'];
 					$img_read_four = $image['sizes']['category_read_four'];
-					$img_read_block = $image['sizes']['category_read_right'];
+					$img_read_block = $image['sizes']['category_read_full'];
+
 					$img_read_full = $image['sizes']['category_read_full'];
 					
 					$cat = get_field('category');
@@ -189,7 +190,7 @@ get_header(); ?>
 						<div class="article article_full">
 						  	<div class="article_container credit_container">
 				    		    <a href="<?php echo $link ?>">
-							  		<div class="category_article"><?php echo $cat; ?></div>
+							  		<div class="category_article"><?php echo $categorie; ?></div>
 						    	    <img src="<?php echo $img_read_full; ?>">
 						    	    <h4 class="article_title"><?php the_title();  ?>	    	
 						    	    </h4>

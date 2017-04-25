@@ -24,7 +24,7 @@ Template Name: Home page
 	$song_article = array(
 	    'post_type' => 'post',
 	    'category_name' => 'listen',
-	    'posts_per_page' => 10,
+	    'posts_per_page' => 20,
 	    'order' => 'DESC',
 	);
 
@@ -295,8 +295,7 @@ Template Name: Home page
 		<?php 
 			$cover_cta = get_field('cover_cta');
 		?>
-		<a href="<?php the_field('link_cta'); ?>">
-			<img src="<?php echo $cover_cta['sizes']['large'];?>">
+		<a href="<?php the_field('link_cta'); ?>" style="background-image: url('<?php echo $cover_cta['sizes']['large'];?>');">
 		</a>
 	</div>
 	<div class="question_ans_container">
@@ -334,72 +333,103 @@ Template Name: Home page
 	</div>
 	<div class="mixtape_slider">
 		<?php 
-		$loop = new WP_Query( array( 'post_type' => 'artist', 'posts_per_page' => 10 ) );
-		while ( $loop->have_posts() ) : $loop->the_post(); ?>
-			<?php $image = get_field('cover');
+		// get posts
+		$posts = get_posts(array(
+			'post_type'	=> 'artist',
+			'meta_key'	=> 'date',
+	    	'posts_per_page' => 10,
+			'orderby'	=> 'meta_value_num',
+			'order'		=> 'ASC'
+		));
+
+		// loop
+		if( $posts ) {
+			
+			foreach( $posts as $post ) {
+			$image = get_field('cover');
+				
+				setup_postdata( $post ); ?>
+
+						<div class="mixtape">
+					<div class="round_album"></div>
+					<img src="<?php echo $image['sizes']['home_mixtape']; ?> ">
+					<div class="mixtape_title"><?php the_title(); ?></div>
+					<div class="mixtape_band"><?php the_field('album_artist') ?></div>
+					<div class="mixtape_date"><?php the_field('date'); ?></div>
+				</div>
+				<?php
+			}
+			wp_reset_postdata();
+		}
 		?>
-		<div class="mixtape">
-			<div class="round_album"></div>
-			<img src="<?php echo $image['sizes']['home_mixtape']; ?> ">
-			<div class="mixtape_title"><?php the_title(); ?></div>
-			<div class="mixtape_band"><?php the_field('album_artist') ?></div>
-			<div class="mixtape_date"><?php the_field('date'); ?></div>
-		</div>
-		<?php endwhile; ?>
-		<?php wp_reset_postdata();?>		
+
 	</div>
 </div>
-<div class="container layered_container grey_line"></div>
-<!-- <div class="container event_container grey_line">
-	<div class="event_header">
-		<h2><?php echo "évènnement$ hip-hop" ?></h2>
-		<div class="switch">
-			<div class="btn_prev">
-				<i class="icon-arrow-left"></i>
-			</div>
-			<div class="btn_next">
-				<i class="icon-arrow-right"></i>
+<div class="container">
+	<div class="container layered_container grey_line"></div>
+	<div class="wall_insta">
+		<div class="insta_header">
+			<h2><a href="https://www.instagram.com/dopeman_magazine/" target="_blank"><?php echo "@dopeman_magazine" ?></a></h2>
+			<div class="switch">
+				<div class="btn_prev">
+					<i class="icon-arrow-left"></i>
+				</div>
+				<div class="btn_next">
+					<i class="icon-arrow-right"></i>
+				</div>
 			</div>
 		</div>
+		<ul id="rudr_instafeed"></ul>
+
 	</div>
-	<div class="tab_event">
-		<div class="tab_event_header hidden-xs">
-			<div class="column_title artist"><span>Artiste</span></div>
-			<div class="column_title date"><span>Date</span></div>
-			<div class="column_title place"><span>Lieu</span></div>
-			<div class="column_title price"><span>Prix</span></div>
-		</div>
-		<div class="tab_event_content">
-			<?php 
-			$event_loop = new WP_Query( array( 'post_type' => 'event', 'posts_per_page' => 10 ) );
-			while ( $event_loop->have_posts() ) : $event_loop->the_post(); ?>
-				<?php $event_cover = get_field('event_cover');
-			?>
-			<div class="event">
-				<a href="<?php the_field('event_link'); ?>" target="_blank">
-					<div class="event_tab artist_name">
-						<img src="<?php echo $event_cover['sizes']['home_mixtape']; ?>">
-						<span><?php the_field('event_artist'); ?></span>
-					</div>
-					<div class="event_tab event_date hidden-xs"><?php the_field('event_date'); ?></div>
-					<div class="event_tab event_place hidden-xs "><?php the_field('event_place'); ?></div>
-					<div class="event_tab event_price">€<?php the_field('event_price'); ?>
-						<i class="icon-goto"></i>
-					</div>				
-				</a>
+</div>
+
+	<div class="container layered_container grey_line"></div>
+	<!-- <div class="container event_container grey_line">
+		<div class="event_header">
+			<h2><?php echo "évènnement$ hip-hop" ?></h2>
+			<div class="switch">
+				<div class="btn_prev">
+					<i class="icon-arrow-left"></i>
+				</div>
+				<div class="btn_next">
+					<i class="icon-arrow-right"></i>
+				</div>
 			</div>
-			<?php endwhile; ?>
-			<?php wp_reset_postdata();?>
-
 		</div>
-	</div>
-	
-</div> -->
+		<div class="tab_event">
+			<div class="tab_event_header hidden-xs">
+				<div class="column_title artist"><span>Artiste</span></div>
+				<div class="column_title date"><span>Date</span></div>
+				<div class="column_title place"><span>Lieu</span></div>
+				<div class="column_title price"><span>Prix</span></div>
+			</div>
+			<div class="tab_event_content">
+				<?php 
+				$event_loop = new WP_Query( array( 'post_type' => 'event', 'posts_per_page' => 10 ) );
+				while ( $event_loop->have_posts() ) : $event_loop->the_post(); ?>
+					<?php $event_cover = get_field('event_cover');
+				?>
+				<div class="event">
+					<a href="<?php the_field('event_link'); ?>" target="_blank">
+						<div class="event_tab artist_name">
+							<img src="<?php echo $event_cover['sizes']['home_mixtape']; ?>">
+							<span><?php the_field('event_artist'); ?></span>
+						</div>
+						<div class="event_tab event_date hidden-xs"><?php the_field('event_date'); ?></div>
+						<div class="event_tab event_place hidden-xs "><?php the_field('event_place'); ?></div>
+						<div class="event_tab event_price">€<?php the_field('event_price'); ?>
+							<i class="icon-goto"></i>
+						</div>				
+					</a>
+				</div>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata();?>
 
-
-
-
-
+			</div>
+		</div>
+		
+	</div> -->
 
 <?php get_footer(); ?>
 

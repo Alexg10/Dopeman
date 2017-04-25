@@ -60,9 +60,7 @@
 
 
 
-
-
-
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/assets/js/lib/flickity.pkgd.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/main.js"></script>
 
