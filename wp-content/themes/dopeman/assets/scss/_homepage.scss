@@ -690,6 +690,44 @@
 @media screen and (max-width: $tablet){
 	max-width: 100%; 
 
+	.article_display_cat{
+		.category_container{
+			.category_bottom{
+				a{
+					padding: 0 10px;
+					font-size: 14px;
+				}
+			} 
+		}
+	}
+	.article_display_cat{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		.category_container{
+			.category_bottom{
+				a{
+					padding: 0 10px;
+					font-size: 14px;
+				}
+			}
+			&.listen{
+				width: 100%;
+				order: 3;
+			    margin-top: 58px;
+			}
+			&.see,
+			&.read{
+				width: 50%;
+				order: 1;
+			}
+			&.read{
+				top: 68px;
+			    right: 0;
+			    position: absolute;
+			}
+		}
+	}
 	.sub_nav{
 		.hot_shits{
 			max-width: 270px;
@@ -706,19 +744,32 @@
 		}
 	}
 	.question_playlist_container{
+		display: block;
+		max-height: 999px;
 		.playlist_cta {
 			width: 100%;
 			background: #1b221e;
 			text-align: center;
+			a{
+				background-position: 50% 50%;
+			}
 			img{
 				max-width: 300px;
 			}
 		} 
 		.question_ans_container{
+			display: flex;
+    		align-items: center;
 			width: 100%;
 			font-size: 45px;
+			min-height: 400px;
 			.question_container{
 				line-height: 78px;
+			}
+			.answer_container{
+				&.answer_container_visible{
+					right: 0px!important;
+				}
 			}
 		}
 	}
@@ -801,9 +852,10 @@
 				font-size: 48px;
 				line-height: 80px;
 				margin-left: 0;	
+				padding: 15px 15px 15px 21px;
 			    a{
 			    	letter-spacing: 18px;
-			    	padding: 0 20px;
+			    	padding: 0;
 			    }
 			}
 		}
@@ -853,7 +905,7 @@
 	}
 
 	.hot_shits_display{
-		padding-bottom: 0;
+		padding: 0;
 		.single_shit{
 			width: 100%;
 			padding: 0 20px;
@@ -871,7 +923,7 @@
 		}
 	} 
 	.category_article{
-		left: 10px;
+		left: 40px;
 	}
 
 	.article_display_cat{
@@ -974,7 +1026,6 @@
 				width: 100%;
 				left: 0;
 				transition: all 0.2s ease;
-
 			}
 			.category_header{
 				display:inline-block;
@@ -1008,6 +1059,9 @@
 					}
 				}
 			} 
+			.category_bottom{
+				display: none;
+			}
 			&.mobile_display{
 				display: flex;
 				.category_header{
@@ -1060,6 +1114,16 @@
 				}
 			}
 		} 
+	}
+	.mixtape_container{
+		.mixtape_header{
+			padding-left: 0;
+		}
+	}
+	.wall_insta{
+		.insta_header{
+			padding-left: 0;
+		}
 	}
 	.question_playlist_container{
 		 .question_ans_container{

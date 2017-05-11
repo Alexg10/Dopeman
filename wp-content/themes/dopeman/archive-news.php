@@ -27,9 +27,6 @@ get_header(); ?>
 	</div>
 		<main id="read_category_display" class="read_category category" role="main">
 
-
-
-
 		<?php
 		if ( have_posts() ) : ?>
 
@@ -51,10 +48,10 @@ get_header(); ?>
 				<div class="sidebar_category_article title">
 					Articles
 				</div>
+				<div class="sidebar_category_article article">
 					<?php query_posts('category_name=news&posts_per_page=8'); ?>
 					<?php
 					while ( have_posts() ) : the_post();
-
 					$link = get_permalink();
 					$date= get_the_date('d.m.y');?>
 						<div class="link">
@@ -62,12 +59,10 @@ get_header(); ?>
 							<?php the_title(); ?>
 							</a>
 						</div>
-					
 						  <?php
-
-
 					endwhile; 
 					wp_reset_postdata();?>
+				</div>
 			
 			</div>
 
@@ -76,10 +71,13 @@ get_header(); ?>
 				<?php
 				/* Start the Loop */
 				$i = 1;
-				query_posts('category_name=news&posts_per_page=12'); 
-
-				while ( have_posts() ) : the_post();
-
+				
+				$temp = $wp_query; 
+				$wp_query = null; 
+				$wp_query = new WP_Query(); 
+				$wp_query->query('showposts=12&category_name=news'.'&paged='.$paged); 
+				
+				while ($wp_query->have_posts()) : $wp_query->the_post(); 
 
 					$link = get_permalink();
 					$date= get_the_date('d.m.y');					

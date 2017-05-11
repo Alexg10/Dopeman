@@ -28,7 +28,9 @@ Description: This part is optional, but helpful for describing the Post Template
 					</div>
 				</div>
 				<div class="page_title_container">
-					<div class="page_title"><?php echo $cat->cat_name; ?> : <div class="data_artist"><?php the_title(); ?></div></div>					
+					<div class="page_title">
+						<span><?php echo $cat->cat_name; ?> :</span> 
+						<div class="data_artist"><?php the_title(); ?></div></div>					
 				</div>
 				<div class="share_article">
 					<span class="share">Partager :</span>

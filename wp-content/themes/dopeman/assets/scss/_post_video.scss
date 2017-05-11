@@ -22,7 +22,6 @@
 	.page_title_container{
 		flex:1;
 		text-transform: uppercase;
-		white-space: nowrap;
 		.page_title{
 			font-size: 16px;
 			line-height: 76px;
@@ -31,8 +30,15 @@
 			letter-spacing: 1px;
 			max-width: 652px;
 			overflow: hidden;
+			span{
+				float: left;
+			}
 			.data_artist{
 				display: inline-block;
+			    white-space: nowrap;
+			    float: left;
+			    width: 70%;
+			    padding-left: 20px;
 			}
 		}
 	}
@@ -160,12 +166,10 @@
 		.article_title{
 			height: 86px;
 			overflow: hidden;
+			margin-top:0px;
 		}
 	}
 }
-
-
-
 
 
 @media screen and (max-width: $tablet){
@@ -182,6 +186,7 @@
 		.share_article{
 			width: 100%;
 			border-top: 1px solid $light-grey;
+			border-bottom: 1px solid $light-grey;
 		}
 		.date_infos{
 			position: absolute;
@@ -191,10 +196,8 @@
 		}
 		.page_title_container{
 			max-width: 80%;
-			max-width: 495px;
 			overflow: hidden;
 			.page_title{
-				white-space: nowrap;
 				padding: 0 20px;
 				overflow: hidden;
 			}
@@ -416,12 +419,22 @@
 			}
 		}
 		.date_infos{
-			top: 77px;
+			top: initial;
+			bottom: 0;
 		}
 		.page_title_container{
 			border-bottom: 1px solid $light-grey; 
+			max-width: 100%;
 			.page_title{
 				font-size: 15px;
+				line-height: 46px;
+				max-width: 100%;
+				.data_artist{
+					display: inline-block;
+					white-space: normal;
+					width: auto;
+					padding-left: 0;
+				}
 			}
 		}
 	}

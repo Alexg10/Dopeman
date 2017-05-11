@@ -185,6 +185,12 @@
 					width: 50%;
 					max-width: 50%;
 					min-width: 50%;
+					border-left: none;
+					border-right: none;
+
+				}
+				.listen_description{
+					border-left: 1px solid $light-grey;
 				}
 			}
 		}
@@ -225,8 +231,8 @@
 			.listen_info_container{
 				min-width: 60px;
 				.listen_title{
-					font-size: 32px;
-					line-height: 70px;
+					font-size: 28px;
+					line-height: 55px;
 				}
 			}
 			.listen_player{
@@ -240,8 +246,15 @@
 					font-size: 15px;
 					align-self: center;
 				}
+				.listen_description{
+				    display: flex;
+				    align-items: center;
+				    align-content: stretch;
+				    text-align: c;
+				    width: 100%;
+				    padding-left: 30px;
+				}
 			}
 		}
 	}
-
 }

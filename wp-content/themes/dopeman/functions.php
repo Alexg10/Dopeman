@@ -232,7 +232,7 @@ add_action('template_include', 'load_single_template');
         $new_template = locate_template(array('single-numbers.php' ));
       }else if( has_term('listen', 'category', $post) ){
         $new_template = locate_template(array('single-listen.php' ));
-	  }else if( has_term('clip', 'category', $post) ){
+	  }else if( has_term('see', 'category', $post) ){
 	    $new_template = locate_template(array('single-video.php' ));
       }else{
         $new_template = locate_template(array('single.php' ));

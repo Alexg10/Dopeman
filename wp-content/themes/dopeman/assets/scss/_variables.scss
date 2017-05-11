@@ -187,6 +187,9 @@ a{
     		font-family: 'gotham_htfmedium';
 			font-weight: 100;
 			min-height: 54px;
+			@media screen and (max-width: $mobile){
+				margin-top: 5px;
+			}
 		}
 		.display_date{
 			font-size: 14px;

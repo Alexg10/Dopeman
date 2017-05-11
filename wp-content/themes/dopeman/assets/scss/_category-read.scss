@@ -192,8 +192,17 @@
 			&.title{
 				background: url('../img/background_title.jpg');
 			}
+			.icon-arrow-right{
+				display: none;
+			}
 		}
-
+		.sidebar_category_article{
+			padding: 0;
+			border-bottom: none;
+			&.title{
+				padding: 0 22px;
+			}
+		}	
 		.link{
 			border-bottom: 1px dashed $light-grey;	
 			a{
@@ -202,6 +211,7 @@
 				padding: 20px 30px;
 				font-size: 15px;
 			    font-family: 'libre_baskervilleregular';
+			    line-height: 30px;
 
 			}
 		}
@@ -291,6 +301,10 @@
 					width: 60%;
 					background-size: cover;
 					background-position: 50%;
+					@media screen and (max-width: $mobile){
+						width: 100%;
+						height: initial;
+					}
 				}
 				.content_block{
 					width: 40%;
@@ -300,6 +314,9 @@
 					height: 100%;
 				    padding: 6px 30px;
 			        min-height: 480px;
+			        @media screen and (max-width: $mobile){
+			        	min-height: 200px;
+			        }
 					.article_title{
 						font-size: 33px;
 						color:$white;
@@ -310,6 +327,17 @@
 					.acf-media-credit{
 						bottom: 8px; 
 						right: 43%;
+				        @media screen and (max-width: $mobile){
+							bottom: 8px;
+							right: 30px;
+						}
+					}
+				}
+				.article_container{
+					a{
+						img{
+							min-height: 180px;
+						}
 					}
 				}
 				img{
@@ -415,14 +443,14 @@
 					.icon-arrow-left{
 						font-size: 11px;						
 						position: relative;
-						top: -5px;
+						top: -2px;
 						margin-left: 0px;
 						margin-right: 10px;
 					}
 					.icon-arrow-right{
 						font-size: 11px;						
 						position: relative;
-						top: -5px;
+						top: -2px;
 						margin-left: 10px;
 					}
 				}
@@ -452,6 +480,32 @@
 
 	.category{
 		.sidebar_category{
+			max-width: 100%;
+			.sidebar_category_filter{
+				position: relative;
+				&.open{
+					.icon-arrow-right{
+						transform: rotate(-90deg);
+						transition: transform 0.6s ease;
+					}
+				}
+				.icon-arrow-right{
+					display: block;
+					position: absolute;
+					top: 20px;
+					right: 20px;
+					transform: rotate(90deg);
+					transition: transform 0.6s ease;
+				}
+			}
+			.sidebar_category_article.title{
+				display: none;
+			}
+			.sidebar_category_article.article{
+				display: none;
+			}
+		}
+		.category_list{
 			display: none;
 		}
 		.category_container{
@@ -467,12 +521,16 @@
 					.content_block{
 						position: absolute;
 						right: 0;
-						width: 35%; 
+						width: 45%; 
+						top: 0;
+					}
+					.img_container{
+						width: 55%; 
+						min-height: 380px;
 					}
 					img{
 						width: 100%;
 						float: left;
-						margin-left: -26%;
 					}
 				}
 				&.article_four_text{
@@ -506,13 +564,15 @@
 				.article{
 					.article_container{
 						.article_artist{
-							font-size: 38px;
-							transform: translateY(-24px);
+							font-size: 32px;
+							transform: translateY(0px);
 						}
 						.article_title{
-							font-size: 28px;
-							max-width: 305px;
+							font-size: 24px;
+							max-width: 100%;
 							overflow: hidden;
+							line-height: 28px;
+							margin-top: -2px;
 						}
 					}
 				}
@@ -574,13 +634,17 @@
 							width: 100%;
 						}
 						.article_title{
-							margin-top: initial;
+							margin-top: 12px;
+							min-height: 73px;
 						}
 					}
 				}
 				&.article_full_right{
 					img{
 						margin-left: 0;
+					}
+					.img_container{
+						width: 100%; 
 					}
 					.content_block{
 						position: initial; 
@@ -622,7 +686,7 @@
 			}
 			.page_title_container{
 				.page_title{
-					font-size: 13px;
+					font-size: 18px;
 					width: 100%;
 				}
 			}
@@ -631,11 +695,15 @@
 			.category_container{
 				.article{
 					.article_container{
+						a{
+							height: 90px;
+						}
 						line-height: 34px;
 						.icon-container{
 							width: 50px;
 							.icon-play{
 								left: 11px;
+								top: 34px;
 							}
 						}
 						.article_artist{
@@ -644,11 +712,14 @@
 							margin-top: 0;
 							padding-top: 3px;
 							transform: translateY(0);
+							line-height:48px;
 						}
 						.article_title{
 							font-size: 18px;
 							display: block;
 							padding-left: 0px;
+							line-height: 32px;
+							min-height: 32px;
 							span{
 								display: none;
 							}

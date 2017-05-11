@@ -61,7 +61,7 @@ $( document ).ready(function() {
 	// 	// pos_scroll = pos_scroll.substring(1);
 	// 	console.log(listen_height);
 	// }
-pos_scroll =0;
+	pos_scroll =0;
 	var interval;
 	// $('.scrolldown').mouseenter(function(){
 
@@ -140,7 +140,8 @@ pos_scroll =0;
 	var related_slider = $('.related_content').flickity({
 	  cellAlign: 'left',
 	  contain: true,
-	  prevNextButtons: false
+	  prevNextButtons: false,
+	  pageDots: false
 	});
 
 	related_slider.data('flickity');
@@ -221,8 +222,8 @@ pos_scroll =0;
 
 
 	//SINGLE VIDEO PLAY VIDEO FADE COVER
-	$('.clip_cover').on('click', function(){
-		$(this).fadeOut();
+	$('.clip_cover, .play_btn').on('click', function(){
+		$('.clip_cover').fadeOut();
 		$('.play_btn').fadeOut();
 		$('.embed_youtube').css('position','relative');
 		$('.embed_youtube').css('zIndex','1');
@@ -339,7 +340,6 @@ pos_scroll =0;
 		type: 'GET',
 		data: {access_token: token, count: num_photos},
 		success: function(data){
-	 		console.log(data);
 			for( x in data.data ){
 				$('#rudr_instafeed').append('<li><a href="https://www.instagram.com/dopeman_magazine/" target="_blank"><img src="'+data.data[x].images.low_resolution.url+'"></a></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
 				// data.data[x].images.thumbnail.url - URL of image 150х150
@@ -375,7 +375,17 @@ pos_scroll =0;
 		//SLIDER WALL INSTA
 
 
+	//DISPLAY CATEGORY ARCHIVE MOBILE
 
+
+	windowW= $(window).width();
+	console.log(windowW);
+	if(windowW < 800){
+		$('.sidebar_category_filter').on('click', function(){
+			$('.category_list').slideToggle();
+			$('.sidebar_category_filter').toggleClass('open');
+		})
+	};
 
 
 

@@ -36,6 +36,7 @@ get_header(); ?>
 		<div class="sidebar_category">
 			<div class="sidebar_category_filter title">
 				Filtres
+				<i class="icon-arrow-right"></i>
 			</div>	
 			<?php
 				$categories = get_categories( 'child_of=4&hide_empty=0');
@@ -50,6 +51,8 @@ get_header(); ?>
 			<div class="sidebar_category_article title">
 				Articles
 			</div>
+			<div class="sidebar_category_article article">
+
 				<?php query_posts('cat=4&posts_per_page=8'); ?>
 				<?php
 				while ( have_posts() ) : the_post();
@@ -65,14 +68,21 @@ get_header(); ?>
 					  <?php
 				endwhile; 
 				wp_reset_postdata();?>
+			</div>
 		</div>
 
 		<div class="category_container">
 			<?php
 			/* Start the Loop */
 			$i = 1;
-			query_posts('cat=4&posts_per_page=18'); 
-			while ( have_posts() ) : the_post();
+
+			$temp = $wp_query; 
+			$wp_query = null; 
+			$wp_query = new WP_Query(); 
+			$wp_query->query('showposts=18&cat=4'.'&paged='.$paged); 
+			
+			while ($wp_query->have_posts()) : $wp_query->the_post(); 
+
 				$i++;
 				$link = get_permalink();
 				$date= get_the_date('d.m.y');					

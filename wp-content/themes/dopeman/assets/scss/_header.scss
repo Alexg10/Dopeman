@@ -336,8 +336,17 @@
 			margin-top: -1px;
 		}
 	}
-
-
+	.site-header{
+		.main-navigation{
+			.main-navigation_left{
+				.search-form{
+					.icon-search{
+						line-height: 80px;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $mobile){

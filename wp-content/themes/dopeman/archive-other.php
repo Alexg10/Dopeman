@@ -57,6 +57,8 @@
 				<div class="sidebar_category_article title">
 					Articles
 				</div>
+				<div class="sidebar_category_article article">
+
 					<?php
 					while ( have_posts() ) : the_post();
 
@@ -70,10 +72,9 @@
 						</div>
 					
 						  <?php
-
-
 					endwhile; 
 					wp_reset_postdata();?>
+				</div>
 			
 			</div>
 
