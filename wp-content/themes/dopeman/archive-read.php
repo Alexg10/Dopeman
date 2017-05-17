@@ -13,7 +13,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="read_top grey_line">
 			<div class="page_title_container">
-				<div class="page_title">Un peu de lecture ?</div>						
+				<div class="page_title">Le bitume avec une plume</div>						
 			</div>
 			<div class="switch">
 				<div class="btn_prev">

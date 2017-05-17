@@ -50,7 +50,7 @@ Template Name: Home page
 <div class="container  grey_line mobile">
 	<div class="sub_nav">
 		<div class="hot_shits">
-				<h3 class="section_title">Hot $hits of the week</h3>			
+				<h3 class="section_title">Les dopes de la semaine</h3>
 		</div>
 		<div class="week_display">
 			<p>S4  •  Lundi 13 - dimanche 19 juin 2016</p>
@@ -109,7 +109,7 @@ Template Name: Home page
 <div class="grey_line"></div>
 
 	<div class="article_display_cat listen">
-		<h3 class="section_title">le bitume avec une plume</h3>
+		<h3 class="section_title">Nos articles les plus récents</h3>
 
 		<div class="category_container mobile_display">
 			<div class="category_header listen">

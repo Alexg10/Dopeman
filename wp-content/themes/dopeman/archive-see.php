@@ -15,7 +15,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="read_top grey_line">
 			<div class="page_title_container">
-				<div class="page_title">Just Me & My Clip</div>						
+				<div class="page_title">Je Zappe Et Je Mate</div>						
 			</div>
 			<div class="switch">
 				<div class="btn_prev">

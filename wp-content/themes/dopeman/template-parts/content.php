@@ -19,8 +19,8 @@
 	<div class="container">
 		<div class="article_top">
 			<div class="back_btn_container">
-				<div class="back_btn">
-					<i class="icon-arrow-left"></i><a href="">Retour</a>
+				<div class="back_btn" onclick="window.history.back()">
+					<i class="icon-arrow-left"></i>Retour
 				</div>
 			</div>
 			<div class="page_title_container">

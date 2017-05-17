@@ -1560,6 +1560,29 @@ y-axis
   .sub_nav .switch {
     display: none; }
 
+.intro {
+  position: fixed;
+  background-color: #1c1c1c;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999; }
+  .intro .site-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    font-weight: 100;
+    line-height: 200px;
+    letter-spacing: 50px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    color: #fefefe; }
+
 .hot_shits_display {
   padding: 30px 0px;
   overflow: hidden; }
@@ -2137,7 +2160,7 @@ y-axis
     position: absolute;
     bottom: 70px; }
     .site-header .main-navigation .main-navigation_right .rsx_sociaux ul {
-      max-width: 170px; }
+      max-width: 240px; }
       .site-header .main-navigation .main-navigation_right .rsx_sociaux ul li {
         padding: 0 15px; }
         .site-header .main-navigation .main-navigation_right .rsx_sociaux ul li a {
@@ -2155,6 +2178,8 @@ y-axis
 
   .hot_shits_display .single_shit .img_container {
     min-height: 160px; }
+  .hot_shits_display .single_shit:last-of-type {
+    margin-top: 0; }
 
   .sub_nav {
     overflow: hidden; }
@@ -2201,7 +2226,7 @@ y-axis
         width: 100%; }
 
   .category_article {
-    left: 40px; }
+    left: 10px; }
 
   .article_display_cat {
     position: relative;
@@ -2783,6 +2808,8 @@ y-axis
     border-right: 1px solid #eeeeee;
     text-align: center;
     line-height: 76px; }
+    .article_top .back_btn_container .back_btn:hover {
+      cursor: pointer; }
     .article_top .back_btn_container a {
       color: #1c1c1c;
       font-family: 'gotham_htfmedium'; }

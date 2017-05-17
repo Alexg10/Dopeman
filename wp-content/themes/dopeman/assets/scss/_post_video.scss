@@ -10,6 +10,11 @@
 		border-right: 1px solid $light-grey;
 		text-align: center;
 		line-height: 76px;
+		.back_btn{
+			&:hover{
+				cursor: pointer
+			}
+		}
 		a{
 			color: $black;
 			font-family: 'gotham_htfmedium';

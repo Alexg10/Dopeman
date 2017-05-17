@@ -17,7 +17,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="listen_top grey_line">
 			<div class="page_title_container">
-				<div class="page_title">Faites péter les ba$$es</div>	
+				<div class="page_title">Sales Sonorités</div>	
 			</div>
 			<div class="switch">
 				<div class="btn_prev">

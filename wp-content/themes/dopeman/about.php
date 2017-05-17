@@ -14,7 +14,7 @@ Template Name: About
 
 <div class="container">
 	<div class="about_top">
-		<h2 class="page_title"><?php the_title(); ?></h2>
+		<h2 class="page_title">Rap, Musique Que J'aime</h2>
 	</div>
 	<div class="about_block grey_line" style="background-image: url('<?php echo $about_cover ?>')" >
 		<div class="about_description"><?php echo get_field('description') ?></div>

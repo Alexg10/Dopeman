@@ -23,8 +23,8 @@ Description: This part is optional, but helpful for describing the Post Template
 		<div class="container">
 			<div class="article_top">
 				<div class="back_btn_container">
-					<div class="back_btn">
-						<i class="icon-arrow-left"></i><a href="">Retour</a>
+					<div class="back_btn" onclick="window.history.back()">
+						<i class="icon-arrow-left"></i>Retour
 					</div>
 				</div>
 				<div class="page_title_container">
@@ -120,7 +120,7 @@ Description: This part is optional, but helpful for describing the Post Template
 				</div>
 				<div class="related_content">
 					<?php
-					$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 20, 'post__not_in' => array($post->ID) ) );
+					$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 10, 'post__not_in' => array($post->ID) ) );
 					if( $related ) foreach( $related as $post ) {
 					setup_postdata($post); ?>
 						<?php 
