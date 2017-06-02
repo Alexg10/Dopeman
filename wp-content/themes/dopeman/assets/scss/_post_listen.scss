@@ -70,6 +70,10 @@
 		}
 		.half{
 			border-top: 1px solid $light-grey;
+			@media screen and (max-width: $mobile){
+				border-top: none;
+			}
+
 		}
 		.listen_content{
 			display: flex;

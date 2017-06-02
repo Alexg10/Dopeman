@@ -53,6 +53,7 @@
 
 			<nav id="site-navigation" class="main-navigation grey_line" role="navigation">
 				<div class="main-navigation_left">
+					<i class="icon-search"></i>
 					<?php echo get_search_form(); ?>
 				</div>
 				<div class="main-navigation_right">

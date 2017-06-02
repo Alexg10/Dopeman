@@ -24,14 +24,14 @@ Template Name: Home page
 	$song_article = array(
 	    'post_type' => 'post',
 	    'category_name' => 'listen',
-	    'posts_per_page' => 20,
+	    'posts_per_page' => 16,
 	    'order' => 'DESC',
 	);
 
 	$read_article = array(
 	    'post_type' => 'post',
 	    'category_name' => 'read',
-	    'posts_per_page' => 20,
+	    'posts_per_page' => 10,
 	    'order' => 'DESC',
 	);
 

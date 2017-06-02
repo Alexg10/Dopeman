@@ -50,7 +50,7 @@
         {
             "key": "field_591c845e6570f",
             "label": "Contenu",
-            "name": "content_bloc",
+            "name": "dechiffre_content_bloc",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -68,7 +68,7 @@
                 {
                     "key": "field_591c845e6ce21",
                     "label": "Titre",
-                    "name": "bloc_title",
+                    "name": "dechiffre_bloc_title",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
@@ -89,7 +89,7 @@
                 {
                     "key": "field_591c845e6ce3c",
                     "label": "Contenu",
-                    "name": "sub_content_block",
+                    "name": "dechiffre_sub_content_block",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -107,7 +107,7 @@
                         {
                             "key": "field_591c845e71670",
                             "label": "Description",
-                            "name": "sub_content_description",
+                            "name": "dechiffre_sub_content_description",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -125,7 +125,7 @@
                         {
                             "key": "field_591c845e71688",
                             "label": "M\u00e9dias",
-                            "name": "medias",
+                            "name": "dechiffre_medias",
                             "type": "oembed",
                             "instructions": "",
                             "required": 0,
@@ -167,7 +167,7 @@
                 {
                     "key": "field_591c8495038aa",
                     "label": "Note",
-                    "name": "note",
+                    "name": "dechiffre_note",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
@@ -234,5 +234,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1495054363
+    "modified": 1495537386
 }

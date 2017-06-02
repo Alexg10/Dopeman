@@ -59,6 +59,12 @@
 					}
 				}
 			}
+			.icon-search{
+				position: absolute;
+				top: 28px;
+				left: 12px;
+				font-size: 13px;
+			}
 			.search-form{
 				line-height: 70px;
 				width: 100%;
@@ -371,6 +377,10 @@
 				margin-top: 78px;
 				background-color: $black;
 				border-right: none;
+				.icon-search{
+					top: 107px;
+					left: 24%;
+				}
 				.search-form{
 					width: 60%;
 					margin: 0 auto;

@@ -66,30 +66,32 @@
 	<?php
 	$nb = 1;
 	$note_final = get_field('note_final');
-	if( have_rows('content_bloc') ):
-	    while ( have_rows('content_bloc') ) : the_row(); ?>
-	        <div class="bloc_title"><?php the_sub_field('bloc_title'); ?></div>
+	if( have_rows('dechiffre_content_bloc') ):
+	    while ( have_rows('dechiffre_content_bloc') ) : the_row(); ?>
+	        <div class="bloc_title"><?php the_sub_field('dechiffre_bloc_title'); ?></div>
 	        <?php 
-				$note = get_sub_field('note'); 
-	        	$all_fields_count = count(get_field('content_bloc'));
+				$note = get_sub_field('dechiffre_note'); 
+	        	$all_fields_count = count(get_field('dechiffre_content_bloc'));
 	        ?>
-	        <?php if( have_rows('sub_content_block') ): ?>
+	        <?php if( have_rows('dechiffre_sub_content_block') ): ?>
 
-		        	<?php while( have_rows('sub_content_block') ): the_row(); ?>
+		        	<?php while( have_rows('dechiffre_sub_content_block') ): the_row(); ?>
 		        		<div class="content">
 			        		<div class="sub_content_description">    
-							<?php the_sub_field('sub_content_description'); ?>
+							<?php the_sub_field('dechiffre_sub_content_description'); ?>
 							<?php if($nb < $all_fields_count): ?>
-								<?php if($note !=''):  ?>
-									<ul class="star_display" >
-										<?php $nb_full=0; ?>
-										<?php for($i=0; $i<5; $i++): ?>
-											<li><i class="icon-star-empty <?php if($nb_full< $note) echo "full" ?>"></i></li>
-										<?php $nb_full++;
-										endfor; ?>
-									</ul>
+								<?php if($nb > 2): ?>
+									<?php if($note !=''):  ?>
+										<ul class="star_display" >
+											<?php $nb_full=0; ?>
+											<?php for($i=0; $i<5; $i++): ?>
+												<li><i class="icon-star-empty <?php if($nb_full< $note) echo "full" ?>"></i></li>
+											<?php $nb_full++;
+											endfor; ?>
+										</ul>
+									<?php endif; ?>
 								<?php endif; ?>
-							<?php else: ?>
+							<?php elseif($nb > $all_fields_count): ?>
 								<?php if($note_final !=''):  ?>
 									<div class="note_final">
 										<?php  echo $note_final  ?>/10
@@ -100,9 +102,9 @@
 			        		</div>
 			        		<div class="medias">
 								<?php 
-									$medias = get_sub_field('medias');
-									$img = get_sub_field('content_img')['sizes']['data-img'];
-								 	$credit = get_sub_field('content_img')['ID'];
+									$medias = get_sub_field('dechiffre_medias');
+									$img = get_sub_field('dechiffre_content_img')['sizes']['data-img'];
+								 	$credit = get_sub_field('dechiffre_content_img')['ID'];
 									if($medias != ''):
 									 	echo $medias;
 
